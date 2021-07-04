@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://www.myd.money/</loc>
+    <lastmod><%~ it.date.toISOString()%></lastmod>
+  </url>
+  <% for(language of it.languages){ %>
+  <url>
+    <loc>https://www.myd.money/<%~ language.iso %></loc>
+    <lastmod><%~ it.date.toISOString()%></lastmod>
+  </url>
+  <% } %>
+  <url>
+    <loc>https://www.myd.money/sources</loc>
+    <lastmod><%~ it.date.toISOString()%></lastmod>
+  </url>
+  <url>
+    <loc>https://www.myd.money/404</loc>
+    <lastmod><%~ it.date.toISOString()%></lastmod>
+  </url>
+</urlset>

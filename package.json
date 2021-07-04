@@ -1,0 +1,35 @@
+{
+  "name": "why-nano",
+  "version": "1.0.0",
+  "description": "simple nano introduction site",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMyanmarDollar/whymyd.git"
+  },
+  "keywords": [
+    "myd",
+    "myanmar",
+    "dollar",
+    "crypto",
+    "currency",
+    "why",
+    "information"
+  ],
+  "author": "TheMyanmarDollar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheMyanmarDollar/whymyd/issues"
+  },
+  "homepage": "https://github.com/TheMyanmarDollar/whymyd#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^10.0.0",
+    "eta": "^1.12.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11"
+  }
+}
