@@ -112,13 +112,13 @@
             <h4 class="comparison-title fade"><%~ it.compare_kyat_t %></h4>
             <div class="grid-left bar fade" id="military-kyat"></div>
             <div class="grid-right bar fade" id="nug-kyat"></div>
-            <div class="grid-left fade">74,683 trillion Kyat</div>
-            <div class="grid-right fade">0 Kyat</div>
+            <div class="grid-left fade">74,683 trillion <%~ it.data.name_kyat %></div>
+            <div class="grid-right fade">0 <%~ it.data.name_kyat %></div>
             <div class="grid-left bar fade" id="military-myd"></div>
             <div class="grid-right bar fade" id="nug-myd"></div>
             <div class="grid-left fade">0 MYD</div>
             <div class="grid-right fade">27.5 billion MYD</div>
-            <p class="grid-left fade">Military</p>
+            <p class="grid-left fade"><%~ it.data.name_miltary %></p>
             <p class="grid-right fade">NUG</p>          
             <p class="comparison-paragraph fade"><%~ it.compare_kyat_p_ammounts %></p>
           </div>

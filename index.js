@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   const userLanguages = req.acceptsLanguages()
   const cookies = parseCookies(req.headers.cookie)
-  const selectedLanguage = Object.keys(cookies).includes('selectedLanguage') ? cookies.selectedLanguage : 'en'
+  const selectedLanguage = Object.keys(cookies).includes('selectedLanguage') ? cookies.selectedLanguage : 'my'
   res.render('index', { ...languages[selectedLanguage], availableLanguages })
 })
 
@@ -99,7 +99,7 @@ app.get('*', (req, res) => {
   res.render('404')
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`listening on http://localhost:${PORT}`)
 })
 
