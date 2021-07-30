@@ -1,18 +1,18 @@
-# whynano.cc
+# www.myd.money
 
 
 
-![whynano.cc hero section](readme/hero.png)
+![www.myd.money hero section](client/static/img/preview.png)
 
 ## Introduction
 
-[whynano.cc](whynano.cc) is a website with the purpose of giving a simple and quick introduction and overview of the [Nano](www.nano.org) cryptocurrency. Send it to your friends and people you would like to introduce to Nano.
+[www.myd.money](www.myd.money) is a website with the purpose of giving a simple and quick introduction and overview of the [MYD](www.myd.money) cryptocurrency. Send it to your friends and people you would like to introduce to MYD.
 
 
 
 ## Translations
 
-Right now, the page is available in English and German. I'm hoping for people to help translate the page into more languages. To add a language, copy the [english template](languages/en.json), replace the text with the translation and rename the file to "iso-code".json (e.g. de.json for german).
+Right now, the page is available in English and Myanmar. To add a language, copy the [english template](languages/en.json), replace the text with the translation and rename the file to "iso-code".json (e.g. de.json for german).
 
 
 
@@ -25,23 +25,5 @@ If you would like to help translate this page into more languages or contribute 
 
 ## Contributors
 
-[@jaumebosch](https://www.twitter.com/jaumebosch) - added spanish and catalan
+[The Myanmar Dollar Project](https://github.com/TheMyanmarDollar) - Forking and Myanmar Translations
 
-[@marcosbmf](https://www.twitter.com/marcosbmf) - added brazilian portugese
-
-[@fabiandev42](https://twitter.com/fabiandev42) - helped with spanish translation
-
-[@MrPlanN](https://twitter.com/MrPlanN) - added russian
-
-[@siiipatron](https://twitter.com/siiipatron) - added croatian
-
-[@NanoZaida](https://twitter.com/NanoZaida) - added swedish
-
-[u/DePostbode](https://www.reddit.com/user/DePostbode) - dutch spelling correction
-
-[u/Davasei](https://www.reddit.com/user/Davasei) - added galician
-
-
-## Support
-
-If you would like to support this project and others like it (e.g. help me pay for hosting), consider donating to nano_1ybhgzr3xr1qce4ccg6jou7jrtgfzopuab3aw6tfbqgt6hinhj9hx8w8tftk. Any tips are sincerely appreciated!
