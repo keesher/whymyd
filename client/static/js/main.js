@@ -3,13 +3,13 @@ if (location.protocol !== 'https:' && !location.href.includes("localhost")) {
 }
 
 window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('.fade')
+  const sections = document.querySelectorAll('.myd_fade')
   const position = window.innerHeight
   for (section of sections) {
     if (section.getBoundingClientRect().top / 0.7 < position) {
-      section.classList.add('active')
+      section.classList.add('myd_active')
     } else if (section.getBoundingClientRect().top / 0.5 > position) {
-      section.classList.remove('active')
+      section.classList.remove('myd_active')
     }
   }
 })
@@ -47,5 +47,5 @@ const languagePicker = document.querySelector('#language-picker-select')
 languagePicker.addEventListener('change', () => {
   const selectedLanguage = languagePicker.selectedOptions[0].getAttribute('lang')
   setCookie('selectedLanguage', selectedLanguage)
-  window.location = "/"
+  window.location.reload();
 })

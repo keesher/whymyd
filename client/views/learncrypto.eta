@@ -1,0 +1,47 @@
+<% layout('layouts/layout') %>
+
+<div class="myd_container">
+  <% /* <video autoplay muted loop playsinline buffer class="bg-video"  poster="static/img/vid-preview.jpg">
+    <!-- <source src="static/vid/04.webm" type="video/webm" /> -->
+    <!-- <source src="static/vid/04-360p.mp4" type="video/mp4" /> -->
+  </video> */ %>
+  <div class="myd_main" id="myd_main">
+    <section class="myd_solid">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_crypto_title %></h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s1 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s2 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s4 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s5 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s6 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s7 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s8 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s9 %></p>
+            <p class="myd_section-paragraph"><%~ it.learn_crypto_s10 %></p>
+          </div>          
+        </div>        
+      </div>
+    </section>
+    <section class="transparent">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <p class="myd_section-paragraph"><%~ it.learn_myd_title %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_1 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s1 %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_2 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s2 %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_3 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s3 %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_4 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s4 %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_5 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s5 %></p>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s6 %></p>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s7 %></p>
+        <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_6 %></h3>
+        <p class="myd_section-paragraph"><%~ it.learn_myd_s8 %></p>
+      </div>
+    </section>
+  </div>
+</div>
