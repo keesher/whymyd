@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "simple nano introduction site",
   "main": "index.js",
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
   "scripts": {
-    "test": "nodemon"
+    "test": "nodemon",
+    "watch": "npm-watch",
+    "watch:scss": "node-sass --watch scss -o client/static/css"
   },
   "repository": {
     "type": "git",
@@ -30,6 +35,8 @@
     "dotenv": "^10.0.0",
     "eta": "^1.12.1",
     "express": "^4.17.1",
-    "mongoose": "^5.12.11"
+    "mongoose": "^5.12.11",
+    "node-sass": "^6.0.1",
+    "npm-watch": "^0.11.0"
   }
 }

@@ -27,3 +27,31 @@ If you would like to help translate this page into more languages or contribute 
 
 [The Myanmar Dollar Project](https://github.com/TheMyanmarDollar) - Forking and Myanmar Translations
 
+## Development Setup
+
+Running the MYD Website as a Developer:
+
+Set up mongodb atlas cluster, free account tier in the cloud
+
+Install node (on Ubuntu)
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+apt install nodejs
+
+https://github.com/TheMyanmarDollar/whymyd
+cd whymyd
+npm install
+npm install dotenv --save
+
+Create .env file like this with mongo creds you made earlier:
+nano .env
+MONGODB_USER=myduser
+MONGODB_PW=strongpassword
+MONGODB_URL=myurl.mongodb.net
+MONGODB_DB=myddb
+PORT=5000
+
+Run the test server with:
+node index.js
+
+Visit in the browser:
+http://127.0.0.1:5000/

@@ -20,7 +20,6 @@
     "tx_energy_nano": "0.112 Wh",
     "tx_num_bitcoin": "1 tx",
     "tx_num_nano": "10'200'000 txs"
-    
   },
   "page_title": "Why MYD? - A digital currency for a brighter democratic future!",
   "page_description": "Myanmar Dollars are an instant, feeless and eco-friendly digital currency for everyday transactions. It is one of the most energy efficient as well as one of the most environmentally friendly digital currencies. Unlike many other currencies, it does not rely on a single Blockchain (like Bitcoin, Ethereum & Dogecoin), but instead uses a Directed Acyclical Graph. This groundbreaking technology allows MYD to be extremely fast and efficient.",
@@ -66,5 +65,11 @@
   "next_p1": "Begin your journey into the world of borderless, decentralized digital cash.",
   "about_button": "About this page",
   "about_s1": "page by",
-  "about_p1": "support projects like this:"
+  "about_p1": "support projects like this:",
+  "page": {
+    "whymyd": {
+      "title": "Get MYD",
+      "subtitle": "Instant. Feeless. Green. Democratic + Free"
+    }
+  }
 }

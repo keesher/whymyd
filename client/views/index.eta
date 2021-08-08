@@ -1,232 +1,244 @@
 <!DOCTYPE html>
 <html lang="<%~ it.settings.iso %>" itemscope itemtype="https://schema.org/FAQPage">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="<%~ it.page_description %>">
-  <title><%~ it.page_title %></title>
-  <link rel="stylesheet" href="static/css/main.css">
-  <script defer src="static/js/main.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="/static/ico/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/ico/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/ico/favicon-16x16.png">
-  <link rel="manifest" href="/static/site.webmanifest">
-  <meta property="og:title" content="<%~ it.page_title %>">
-  <meta property="og:description" content="<%~ it.page_description %>">
-  <meta property="og:image" content="https://www.myd.money/static/img/preview.png">
-  <meta property="og:url" content="https://www.myd.money/<%~ it.settings.iso %>">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://whynano.cc/<%~ it.settings.iso %>" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
-  <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
-</noscript>
-</head>
-<body>
-  <% if(it.settings.text_align) { %>
-    <style>
-      * {
-        text-align: <%~ it.settings.text_align %>
-      <% } %>
-    </style>
-  <div class="container">
-    <video autoplay muted loop playsinline buffer class="bg-video"  poster="static/img/vid-preview.jpg">
-      <!-- <source src="static/vid/04.webm" type="video/webm" /> -->
-      <source src="static/vid/04-360p.mp4" type="video/mp4" />
-    </video>
-    <div class="intro">
-      <div class="welcome">
-      <img src="static/img/logo.png" width="100px" height="100px">
-       <!-- <svg width="100%" height="100%" viewBox="0 0 568 568" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-          <g id="nano-circle" transform="matrix(1,0,0,1,-1961.3,-106.25)">
-              <rect x="1961.3" y="106.25" width="567.6" height="567.6" style="fill:none;"/>
-              <clipPath id="_clip1">
-                  <rect x="1961.3" y="106.25" width="567.6" height="567.6"/>
-              </clipPath>
-              <g clip-path="url(#_clip1)">
-                  <g transform="matrix(1,0,0,1,1360.3,0.3)">
-                      <path d="M885.1,106.2C728.4,106.2 601.3,233.3 601.3,390C601.3,546.7 728.4,673.8 885.1,673.8C1041.8,673.8 1168.9,546.7 1168.9,390C1168.9,233.3 1041.8,106.2 885.1,106.2Z" style="fill:rgb(74,144,226);fill-rule:nonzero;"/>
-                  </g>
-                  <g transform="matrix(1,0,0,1,1360.3,0.3)">
-                      <path d="M907.5,390C907.5,402.4 897.5,412.4 885.1,412.4C872.7,412.4 862.7,402.4 862.7,390C862.7,373.2 857.1,367.6 840.3,367.6C823.5,367.6 818,373.3 818,390C818,402.4 808,412.4 795.6,412.4C783.2,412.4 773.2,402.4 773.2,390C773.2,377.6 783.2,367.6 795.6,367.6C812.4,367.6 818,362 818,345.2C818,332.8 828,322.8 840.4,322.8C852.8,322.8 862.8,332.8 862.8,345.2C862.8,362 868.4,367.6 885.2,367.6C897.4,367.7 907.5,377.7 907.5,390Z" style="fill:white;fill-rule:nonzero;"/>
-                      <circle cx="750.9" cy="434.8" r="22.4" style="fill:white;"/>
-                      <path d="M1041.6,345.3C1041.6,357.7 1031.6,367.7 1019.2,367.7C1002.4,367.7 996.8,373.3 996.8,390.1C996.8,402.5 986.8,412.5 974.4,412.5C957.6,412.5 952,418.1 952,434.9C952,447.3 942,457.3 929.6,457.3C917.2,457.3 907.2,447.3 907.2,434.9C907.2,422.5 917.2,412.5 929.6,412.5C946.4,412.5 952,406.9 952,390.1C952,377.7 962,367.7 974.4,367.7C991.2,367.7 996.8,362.1 996.8,345.3C996.8,332.9 1006.8,322.9 1019.2,322.9C1031.6,322.9 1041.6,333 1041.6,345.3Z" style="fill:white;fill-rule:nonzero;"/>
-                  </g>
-              </g>
-          </g> -->
-      </svg>
-        <h1><%= it.hero_title %></h1>
-        <h2><%= it.hero_subtitle %></h2>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%~ it.page_description %>">
+    <title><%~ it.page_title %></title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <script src="https://kit.fontawesome.com/29f800e204.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <meta property="og:title" content="<%~ it.page_title %>">
+    <meta property="og:description" content="<%~ it.page_description %>">
+    <meta property="og:image" content="https://www.myd.money/static/img/preview.png">
+    <meta property="og:url" content="https://www.myd.money/<%~ it.settings.iso %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://whynano.cc/<%~ it.settings.iso %>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"></noscript>
+  </head>
+  <body>
+    <% if(it.settings.text_align) { %>
+      <style>
+        * { text-align: <%~ it.settings.text_align %> }
+      </style>
+    <% } %>
+
+    <div id="fmb-ctnr">
+      <div id="fmb-ctnr-wide-menu">
+        <div to="/">Why MYD</div>
+        <div to="/getmyd">Get MYD</div>
+        <div to="/learncrypto">Learn Crypto</div>
+        <div to="/downloads">Downloads</div>
+        <div class="show-lang">
+          <div id="show-lang">Language</div>
+          <div id="show-lang-submenu">
+            <% for(lang of it.availableLanguages) { %>
+              <span class="select-lang" lang="<%~ lang.iso %>" value="<%~ lang.value %>" <%~lang.iso===it.settings.iso ? 'selected' : ''%>><%~ lang.display_name %></span>
+            <% } %>
+          </div>
+        </div>
       </div>
-      <a href="#main" class="scroll-indicator">
-        <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g></switch></svg>
-      </a>
+      <div id="fmb-ctnr-narrow-menu">
+        <div id="mobile">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </div>
-    <div class="main" id="main">
-      <section class="solid">
-        <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 class="section-title fade" itemprop="name"><%~ it.what_title %></h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p class="section-paragraph fade"><%~ it.what_p1 %></p>
-              <p class="section-paragraph fade"><%~ it.what_p2 %></p>
-              <p class="section-paragraph fade"><%~ it.what_p3 %></p>
-              <%~ it.what_p4 ? `<p class="section-paragraph fade">${it.what_p4}</p>` : "" %>
+
+    <div class="container">
+      <video autoplay muted loop playsinline buffer class="bg-video"  poster="static/img/vid-preview.jpg">
+        <!-- <source src="static/vid/04.webm" type="video/webm" /> -->
+        <source src="static/vid/04-360p.mp4" type="video/mp4" />
+      </video>
+
+      <div class="intro">
+        <div class="welcome">
+        <img src="static/img/logo.png" width="100px" height="100px">
+        <!-- <svg width="100%" height="100%" viewBox="0 0 568 568" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <g id="nano-circle" transform="matrix(1,0,0,1,-1961.3,-106.25)">
+                <rect x="1961.3" y="106.25" width="567.6" height="567.6" style="fill:none;"/>
+                <clipPath id="_clip1">
+                    <rect x="1961.3" y="106.25" width="567.6" height="567.6"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1,0,0,1,1360.3,0.3)">
+                        <path d="M885.1,106.2C728.4,106.2 601.3,233.3 601.3,390C601.3,546.7 728.4,673.8 885.1,673.8C1041.8,673.8 1168.9,546.7 1168.9,390C1168.9,233.3 1041.8,106.2 885.1,106.2Z" style="fill:rgb(74,144,226);fill-rule:nonzero;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,1360.3,0.3)">
+                        <path d="M907.5,390C907.5,402.4 897.5,412.4 885.1,412.4C872.7,412.4 862.7,402.4 862.7,390C862.7,373.2 857.1,367.6 840.3,367.6C823.5,367.6 818,373.3 818,390C818,402.4 808,412.4 795.6,412.4C783.2,412.4 773.2,402.4 773.2,390C773.2,377.6 783.2,367.6 795.6,367.6C812.4,367.6 818,362 818,345.2C818,332.8 828,322.8 840.4,322.8C852.8,322.8 862.8,332.8 862.8,345.2C862.8,362 868.4,367.6 885.2,367.6C897.4,367.7 907.5,377.7 907.5,390Z" style="fill:white;fill-rule:nonzero;"/>
+                        <circle cx="750.9" cy="434.8" r="22.4" style="fill:white;"/>
+                        <path d="M1041.6,345.3C1041.6,357.7 1031.6,367.7 1019.2,367.7C1002.4,367.7 996.8,373.3 996.8,390.1C996.8,402.5 986.8,412.5 974.4,412.5C957.6,412.5 952,418.1 952,434.9C952,447.3 942,457.3 929.6,457.3C917.2,457.3 907.2,447.3 907.2,434.9C907.2,422.5 917.2,412.5 929.6,412.5C946.4,412.5 952,406.9 952,390.1C952,377.7 962,367.7 974.4,367.7C991.2,367.7 996.8,362.1 996.8,345.3C996.8,332.9 1006.8,322.9 1019.2,322.9C1031.6,322.9 1041.6,333 1041.6,345.3Z" style="fill:white;fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g> -->
+        </svg>
+          <h1><%= it.hero_title %></h1>
+          <h2><%= it.hero_subtitle %></h2>
+        </div>
+        <a href="#main" class="scroll-indicator">
+          <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g></switch></svg>
+        </a>
+      </div>
+
+      <div class="main" id="main">
+        <section class="solid">
+          <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="section-title fade" itemprop="name"><%~ it.what_title %></h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p class="section-paragraph fade"><%~ it.what_p1 %></p>
+                <p class="section-paragraph fade"><%~ it.what_p2 %></p>
+                <p class="section-paragraph fade"><%~ it.what_p3 %></p>
+                <%~ it.what_p4 ? `<p class="section-paragraph fade">${it.what_p4}</p>` : "" %>
+              </div>
+              
             </div>
             
           </div>
-          
-        </div>
-      </section>
-      <section class="transparent">
-        <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 class="section-title fade" itemprop="name"><%~ it.benefit_title%></h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p class="section-paragraph fade"><%~ it.benefit_p1 %></p>  
-              <p class="section-paragraph fade"><%~ it.benefit_p2 %></p>
+        </section>
+        <section class="transparent">
+          <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="section-title fade" itemprop="name"><%~ it.benefit_title%></h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p class="section-paragraph fade"><%~ it.benefit_p1 %></p>  
+                <p class="section-paragraph fade"><%~ it.benefit_p2 %></p>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        <section class="solid">
+          <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="section-title fade" itemprop="name"><%~ it.amount_title %></h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p class="section-paragraph fade"><%~ it.amount_p1 %></p>  
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        <section class="transparent">
+          <div class="section-group">
+            <h3 class="section-title fade"><%~ it.compare_title %></h3>
+            
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_kyat_t %></h4>
+              <div class="grid-left bar fade" id="military-kyat"></div>
+              <div class="grid-right bar fade" id="nug-kyat"></div>
+              <div class="grid-left fade">74,683 trillion <%~ it.data.name_kyat %></div>
+              <div class="grid-right fade">0 <%~ it.data.name_kyat %></div>
+              <div class="grid-left bar fade" id="military-myd"></div>
+              <div class="grid-right bar fade" id="nug-myd"></div>
+              <div class="grid-left fade">0 MYD</div>
+              <div class="grid-right fade">27.5 billion MYD</div>
+              <p class="grid-left fade"><%~ it.data.name_miltary %></p>
+              <p class="grid-right fade">NUG</p>          
+              <p class="comparison-paragraph fade"><%~ it.compare_kyat_p_ammounts %></p>
+            </div>
+
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_kyat_1_t %></h4>
+              <div class="grid-left bar fade" id="kyat-supply"></div>
+              <div class="grid-right bar fade" id="myd-supply"></div>
+              <div class="grid-left fade"><%~ it.data.tx_kyat %></div>
+              <div class="grid-right fade"><%~ it.data.tx_myd %></div>
+              <p class="grid-left fade"><%~ it.data.name_kyat %></p>
+              <p class="grid-right fade"><%~ it.data.name_nano %></p>
+              <p class="comparison-paragraph fade"><%~ it.compare_kyat_p %></p>
+            </div>
+
+
+
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_g1_t %></h4>
+              <div class="grid-left bar fade" id="bitcoin-speed"></div>
+              <div class="grid-right bar fade" id="nano-speed"></div>
+              <div class="grid-left fade"><%~ it.data.tx_duration_bitcoin %></div>
+              <div class="grid-right fade"><%~ it.data.tx_duration_nano %></div>
+              <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
+              <p class="grid-right fade"><%~ it.data.name_nano %></p>          
+              <p class="comparison-paragraph fade"><%~ it.compare_g1_p %></p>
+            </div>
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_g2_t %></h4>
+              <div class="grid-left bar fade" id="bitcoin-fees"></div>
+              <div class="grid-right bar fade" id="nano-fees"></div>
+              <div class="grid-left fade"><%~ it.data.tx_fee_bitcoin %></div>
+              <div class="grid-right fade"><%~ it.data.tx_fee_nano %></div>
+              <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
+              <p class="grid-right fade"><%~ it.data.name_nano %></p>  
+              <p class="comparison-paragraph fade"><%~ it.compare_g2_p %></p>
+            </div>
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_g3_t %></h4>
+              <div class="grid-left bar fade" id="bitcoin-energy"></div>
+              <div class="grid-right bar fade" id="nano-energy"></div>
+              <div class="grid-left fade"><%~ it.data.tx_energy_bitcoin %></div>
+              <div class="grid-right fade"><%~ it.data.tx_energy_nano %></div>
+              <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
+              <p class="grid-right fade"><%~ it.data.name_nano %></p>     
+              <p class="comparison-paragraph fade"><%~ it.compare_g3_p %></p>
+            </div>
+            <div class="comparison-grid">
+              <h4 class="comparison-title fade"><%~ it.compare_g4_t %></h4>
+              <div class="grid-left bar fade" id="bitcoin-tx"></div>
+              <div class="grid-right bar fade" id="nano-tx"></div>
+              <div class="grid-left fade"><%~ it.data.tx_num_bitcoin %></div>
+              <div class="grid-right fade"><%~ it.data.tx_num_nano %></div>
+              <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
+              <p class="grid-right fade"><%~ it.data.name_nano %></p>     
+              <p class="comparison-paragraph fade"><%~ it.compare_g4_p %></p>
             </div>
           </div>
-          
-        </div>
-      </section>
-      <section class="solid">
-        <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 class="section-title fade" itemprop="name"><%~ it.amount_title %></h3>
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <div itemprop="text">
-              <p class="section-paragraph fade"><%~ it.amount_p1 %></p>  
-            </div>
+        </section>
+        <section class="solid">
+          <div class="section-group">
+            <h3 class="section-title fade"><%~ it.community_title %></h3>
+            <p class="section-paragraph fade"><%~ it.community_p1 %></p>
+            <p class="section-paragraph fade" >
+              <%~ it.community_s1 %>
+            </p>  
+            <p class="section-paragraph fade"><%~ it.community_p2 %></p>
           </div>
-          
-        </div>
-      </section>
-      <section class="transparent">
-        <div class="section-group">
-          <h3 class="section-title fade"><%~ it.compare_title %></h3>
-          
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_kyat_t %></h4>
-            <div class="grid-left bar fade" id="military-kyat"></div>
-            <div class="grid-right bar fade" id="nug-kyat"></div>
-            <div class="grid-left fade">74,683 trillion <%~ it.data.name_kyat %></div>
-            <div class="grid-right fade">0 <%~ it.data.name_kyat %></div>
-            <div class="grid-left bar fade" id="military-myd"></div>
-            <div class="grid-right bar fade" id="nug-myd"></div>
-            <div class="grid-left fade">0 MYD</div>
-            <div class="grid-right fade">27.5 billion MYD</div>
-            <p class="grid-left fade"><%~ it.data.name_miltary %></p>
-            <p class="grid-right fade">NUG</p>          
-            <p class="comparison-paragraph fade"><%~ it.compare_kyat_p_ammounts %></p>
+        </section>
+        <section class="transparent outro">
+          <div class="section-group">
+            <h2 class="section-title fade"><%~ it.next_title %></h2>
+            <p class="section-paragraph fade">
+              <%~ it.next_s1 %>
+              <a href="https://play.google.com/store/apps/details?id=money.myd.mydwallet" target="_blank" rel="noopener" title="MYD mobile wallet"><%~ it.next_natrium %></a>
+              <%~ it.next_s2 %>
+              <a href="https://t.me/myd_airdrop_bot" target="_blank" rel="noopener" title="Get free MYD"><%~ it.next_faucet %></a>
+              <%~ it.next_s4 %>
+              <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener" title="Facebook of the MYD"><%~ it.next_nano_foundation %></a>
+            </p>
+            <p class="section-paragraph fade"><%~ it.next_p1 %></p>
           </div>
-
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_kyat_1_t %></h4>
-            <div class="grid-left bar fade" id="kyat-supply"></div>
-            <div class="grid-right bar fade" id="myd-supply"></div>
-            <div class="grid-left fade"><%~ it.data.tx_kyat %></div>
-            <div class="grid-right fade"><%~ it.data.tx_myd %></div>
-            <p class="grid-left fade"><%~ it.data.name_kyat %></p>
-            <p class="grid-right fade"><%~ it.data.name_nano %></p>
-            <p class="comparison-paragraph fade"><%~ it.compare_kyat_p %></p>
-          </div>
-
-
-
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_g1_t %></h4>
-            <div class="grid-left bar fade" id="bitcoin-speed"></div>
-            <div class="grid-right bar fade" id="nano-speed"></div>
-            <div class="grid-left fade"><%~ it.data.tx_duration_bitcoin %></div>
-            <div class="grid-right fade"><%~ it.data.tx_duration_nano %></div>
-            <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
-            <p class="grid-right fade"><%~ it.data.name_nano %></p>          
-            <p class="comparison-paragraph fade"><%~ it.compare_g1_p %></p>
-          </div>
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_g2_t %></h4>
-            <div class="grid-left bar fade" id="bitcoin-fees"></div>
-            <div class="grid-right bar fade" id="nano-fees"></div>
-            <div class="grid-left fade"><%~ it.data.tx_fee_bitcoin %></div>
-            <div class="grid-right fade"><%~ it.data.tx_fee_nano %></div>
-            <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
-            <p class="grid-right fade"><%~ it.data.name_nano %></p>  
-            <p class="comparison-paragraph fade"><%~ it.compare_g2_p %></p>
-          </div>
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_g3_t %></h4>
-            <div class="grid-left bar fade" id="bitcoin-energy"></div>
-            <div class="grid-right bar fade" id="nano-energy"></div>
-            <div class="grid-left fade"><%~ it.data.tx_energy_bitcoin %></div>
-            <div class="grid-right fade"><%~ it.data.tx_energy_nano %></div>
-            <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
-            <p class="grid-right fade"><%~ it.data.name_nano %></p>     
-            <p class="comparison-paragraph fade"><%~ it.compare_g3_p %></p>
-          </div>
-          <div class="comparison-grid">
-            <h4 class="comparison-title fade"><%~ it.compare_g4_t %></h4>
-            <div class="grid-left bar fade" id="bitcoin-tx"></div>
-            <div class="grid-right bar fade" id="nano-tx"></div>
-            <div class="grid-left fade"><%~ it.data.tx_num_bitcoin %></div>
-            <div class="grid-right fade"><%~ it.data.tx_num_nano %></div>
-            <p class="grid-left fade"><%~ it.data.name_bitcoin %></p>
-            <p class="grid-right fade"><%~ it.data.name_nano %></p>     
-            <p class="comparison-paragraph fade"><%~ it.compare_g4_p %></p>
-          </div>
-        </div>
-       </section>
-      <section class="solid">
-        <div class="section-group">
-          <h3 class="section-title fade"><%~ it.community_title %></h3>
-          <p class="section-paragraph fade"><%~ it.community_p1 %></p>
-          <p class="section-paragraph fade" >
-            <%~ it.community_s1 %>
-          </p>  
-          <p class="section-paragraph fade"><%~ it.community_p2 %></p>
-        </div>
-      </section>
-      <section class="transparent outro">
-        <div class="section-group">
-          <h2 class="section-title fade"><%~ it.next_title %></h2>
-          <p class="section-paragraph fade">
-            <%~ it.next_s1 %>
-            <a href="https://play.google.com/store/apps/details?id=money.myd.mydwallet" target="_blank" rel="noopener" title="MYD mobile wallet"><%~ it.next_natrium %></a>
-            <%~ it.next_s2 %>
-            <a href="https://t.me/myd_airdrop_bot" target="_blank" rel="noopener" title="Get free MYD"><%~ it.next_faucet %></a>
-            <%~ it.next_s4 %>
-            <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener" title="Facebook of the MYD"><%~ it.next_nano_foundation %></a>
-          </p>
-          <p class="section-paragraph fade"><%~ it.next_p1 %></p>
-        </div>
-      </section>
-    </div>
-    <footer>
-      <div id="about-section">
-        <p><a href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a> <a href="https://twitter.com/MyanmarDollar">Twitter</a> <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener">The Myanmar Dollar Project</a></p>
-        <p><%~ it.about_p1 %> myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</p>
-        <p></p>
-        
+        </section>
       </div>
-      <button id="about-button"><%~ it.about_button %></button>
-    </footer>
-    <div class="language-picker js-language-picker">
-      <form action="" class="language-picker__form">
-        <label for="language-picker-select">
-          <svg title="language selector" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g></switch></svg>
-        </label>
-    
-        <select name="language-picker-select" id="language-picker-select">
+
+      <footer>
+        <div id="about-section">
+          <p><a href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a> <a href="https://twitter.com/MyanmarDollar">Twitter</a> <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener">The Myanmar Dollar Project</a></p>
+          <p><%~ it.about_p1 %> myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</p>
+          <p></p>
           
-          <% for(lang of it.availableLanguages) { %>
-            <option lang="<%~ lang.iso %>" value="<%~ lang.value %>" <%~lang.iso===it.settings.iso ? 'selected' : ''%>><%~ lang.display_name %></option>
-          <% } %>
-        </select>
-      </form>
-      
+        </div>
+        <button id="about-button"><%~ it.about_button %></button>
+      </footer>
     </div>
-  </div>
-</body>
+    <script defer src="static/js/main.js"></script>
+    <script src="/static/js/global.js"></script>
+    <script src="/static/js/index.js"></script>
+  </body>
 </html>

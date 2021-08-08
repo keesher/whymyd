@@ -1,0 +1,93 @@
+@import "base.css";
+
+@mixin menu-items-hover {
+  &:hover {
+    transition: ease-out 500ms;
+    background: #ff0000;
+    color: #fff;
+  }
+}
+
+@mixin menu-items {
+  font-size: large;
+  cursor: pointer;
+  color: #fff;
+  padding: 1rem;
+  @include menu-items-hover();
+
+  i {
+    font-size: large;
+  }
+}
+
+#fmb-ctnr {
+  transition: top 0.5s;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 7;
+  background: rgba($color: #000000, $alpha: 0.7);
+  #fmb-ctnr-wide-menu,
+  #fmb-ctnr-narrow-menu {
+    z-index: 6;
+    display: flex;
+    > div:not(.show-lang) {
+      @include menu-items();
+    }
+    > .show-lang {
+      position: relative;
+      #show-lang-submenu {
+        position: absolute;
+        padding: 0;
+        display: none;
+        flex-direction: column;
+        left: 0;
+        span {
+          @include menu-items-hover();
+          cursor: pointer;
+          padding: 1rem;
+          font-size: large;
+        }
+      }
+      div:first-child {
+        @include menu-items();
+      }
+    }
+  }
+  #fmb-ctnr-narrow-menu {
+    display: none;
+  }
+}
+
+.menu-show {
+  display: flex !important;
+}
+
+@media screen and (max-width: 670px) {
+  #fmb-ctnr {
+    justify-content: flex-start;
+    #fmb-ctnr-wide-menu {
+      display: none;
+      flex-direction: column;
+      div {
+        display: block;
+      }
+      flex: 1;
+      .show-lang {
+        #show-lang-submenu {
+          position: inherit;
+        }
+      }
+    }
+    #fmb-ctnr-narrow-menu {
+      display: flex;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
