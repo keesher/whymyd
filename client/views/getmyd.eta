@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="<%~ it.page_description %>" />
+    <title><%~ it.page.whymyd.title %></title>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <script src="https://kit.fontawesome.com/29f800e204.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/ico/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/ico/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/ico/favicon-16x16.png" />
+    <link rel="manifest" href="/static/site.webmanifest" />
+    <meta property="og:title" content="<%~ it.page.whymyd.title %>" />
+    <meta property="og:description" content="<%~ it.page_description %>" />
+    <meta property="og:image" content="https://www.myd.money/static/img/preview.png" />
+    <meta property="og:url" content="https://www.myd.money/<%~ it.settings.iso %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://whynano.cc/<%~ it.settings.iso %>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" /></noscript>
+  </head>
+  <body>
+    <!-- common code block START -->
+    <div id="fmb-ctnr">
+      <div id="fmb-ctnr-wide-menu">
+        <div to="/">Why MYD</div>
+        <div to="/getmyd">Get MYD</div>
+        <div to="/learncrypto">Learn Crypto</div>
+        <div to="/downloads">Downloads</div>
+        <div class="show-lang">
+          <div id="show-lang">Language</div>
+          <div id="show-lang-submenu">
+            <% for(lang of it.availableLanguages) { %>
+              <span class="select-lang" lang="<%~ lang.iso %>" value="<%~ lang.value %>" <%~lang.iso===it.settings.iso ? 'selected' : ''%>><%~ lang.display_name %></span>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div id="fmb-ctnr-narrow-menu">
+        <div id="mobile">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+    <!-- common code block END -->
+
+    <!-- page content block START -->
+    <div class="container">
+      <!-- background video START --><video autoplay muted loop playsinline buffer class="bg-video"  poster="static/img/vid-preview.jpg">
+        <source src="static/vid/04-360p.mp4" type="video/mp4" />
+      </video><!-- background video END -->
+
+      <div class="intro">
+        <div class="welcome">
+        <img src="static/img/logo.png" width="100px" height="100px">
+        </svg>
+          <h1><%= it.page.whymyd.title %></h1>
+          <h2><%= it.page.whymyd.subtitle %></h2>
+        </div>
+        <a href="#main" class="scroll-indicator">
+          <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g></switch></svg>
+        </a>  
+      </div>
+
+      <div class="main" id="main">
+        <section class="solid">
+          <div class="section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 class="section-title fade" itemprop="name">MYD အကြောင်း နှင့် အသုံးပြုနည်း အပြည့်အစုံ</h3>
+            <iframe width="100%" height="360px" src="https://www.youtube.com/embed/dO13GUcbuC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+      </div>
+
+      <!-- common footer START -->
+      <footer>
+        <div id="about-section">
+          <p><a href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a> <a href="https://twitter.com/MyanmarDollar">Twitter</a> <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener">The Myanmar Dollar Project</a></p>
+          <p><%~ it.about_p1 %> myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</p>
+          <p></p>
+          
+        </div>
+        <button id="about-button"><%~ it.about_button %></button>
+      </footer>
+      <!-- common footer END -->
+    </div>
+    <!-- page content block END -->
+    
+
+    <!-- common code block START -->
+    <script defer src="/static/js/main.js"></script>
+    <script src="/static/js/global.js"></script>
+    <script src="/static/js/getmyd.js"></script>
+    <!-- common code block END -->
+  </body>
+</html>
