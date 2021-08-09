@@ -1,48 +1,33 @@
+"use strict";
+
 if (location.protocol !== "https:" && !location.href.includes("localhost")) {
   location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 
+const floatingMenuBar = document.querySelector(".hide-on-scroll");
 let prevScrollPos = window.pageYOffset;
-const floatingMenuBar = document.querySelector("#fmb-ctnr");
-let toggleMenuOnScroll = true;
-
-window.addEventListener("load", function () {
-  if (window.innerWidth > 670) {
-    toggleMenuOnScroll = true;
-  } else {
-    toggleMenuOnScroll = false;
-  }
-});
 
 window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll(".fade");
+  let navbar_height = document.querySelector(".navbar").offsetHeight;
+  console.log(navbar_height);
+  const sections = document.querySelectorAll(".myd_fade");
   const position = window.innerHeight;
-  for (section of sections) {
+  for (let section of sections) {
     if (section.getBoundingClientRect().top / 0.7 < position) {
-      section.classList.add("active");
+      section.classList.add("myd_active");
     } else if (section.getBoundingClientRect().top / 0.5 > position) {
-      section.classList.remove("active");
+      section.classList.remove("myd_active");
     }
   }
 
-  if (toggleMenuOnScroll) {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollPos > currentScrollPos) {
-      floatingMenuBar.style.top = "0";
-    } else {
-      floatingMenuBar.style.top = "-54px";
-    }
-
-    prevScrollPos = currentScrollPos;
-  }
-});
-
-window.addEventListener("resize", function () {
-  if (window.innerWidth > 670) {
-    toggleMenuOnScroll = true;
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollPos > currentScrollPos) {
+    floatingMenuBar.style.top = `0px`;
   } else {
-    toggleMenuOnScroll = false;
+    floatingMenuBar.style.top = `-${navbar_height}px`;
   }
+
+  prevScrollPos = currentScrollPos;
 });
 
 const aboutButton = document.querySelector("#about-button");
@@ -59,7 +44,7 @@ function setCookie(name, value) {
 
 function getCookies(name = "") {
   let cookies = {};
-  for (cookie of document.cookie.split(";")) {
+  for (let cookie of document.cookie.split(";")) {
     let [key, value] = cookie.split("=");
     cookies[key] = value;
   }
@@ -74,11 +59,9 @@ if (getCookies("selectedLanguage") === undefined) {
   setCookie("selectedLanguage", "en");
 }
 
-const languagePicker = document.querySelectorAll(".select-lang");
-languagePicker.forEach((item) => {
-  item.addEventListener("click", (evt) => {
-    const selectedLanguage = evt.target.attributes.lang.value;
-    setCookie("selectedLanguage", selectedLanguage);
-    location.reload();
-  });
+const languagePicker = document.querySelector("#language-picker-select");
+languagePicker.addEventListener("change", () => {
+  const selectedLanguage = languagePicker.selectedOptions[0].getAttribute("lang");
+  setCookie("selectedLanguage", selectedLanguage);
+  window.location.reload();
 });
