@@ -65,14 +65,36 @@ app.get("/", (req, res) => {
   res.render("index", { ...languages[selectedLanguage], availableLanguages });
 });
 
-app.get("/sources", (req, res) => {
-  res.render("sources");
+app.get("/learncrypto", (req, res) => {
+  const cookies = util.parseCookies(req.headers.cookie);
+  const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
+  res.render("learncrypto", { ...languages[selectedLanguage], availableLanguages });
 });
 
-app.get("/getmyd", function (req, res) {
+app.get("/getmyd", (req, res) => {
   const cookies = util.parseCookies(req.headers.cookie);
   const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
   res.render("getmyd", { ...languages[selectedLanguage], availableLanguages });
+});
+
+app.get("/whitepaper", (req, res) => {
+  const cookies = util.parseCookies(req.headers.cookie);
+  const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
+  res.render("whitepaper", { ...languages[selectedLanguage], availableLanguages });
+});
+
+app.get("/downloads", (req, res) => {
+  const cookies = util.parseCookies(req.headers.cookie);
+  const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
+  res.render("downloads", { ...languages[selectedLanguage], availableLanguages });
+});
+
+app.get("/bs", (req, res) => {
+  res.render("index_bs");
+});
+
+app.get("/sources", (req, res) => {
+  res.render("sources");
 });
 
 // robots.txt
