@@ -1,0 +1,33 @@
+<nav class="hide-on-scroll navbar fixed-top navbar-expand-lg navbar-dark bg-black" style="--bs-bg-opacity: .7;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/"><%~ it.menu_whymyd %></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/getmyd"><%~ it.menu_getmyd %></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/learncrypto"><%~ it.menu_learn %></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/whitepaper"><%~ it.menu_whitepaper %></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/downloads"><%~ it.menu_downloads %></a>
+              </li>
+          </ul>
+          <form action="" class="language-picker__form">
+        
+            <select class="form-select form-select-md" name="language-picker-select" id="language-picker-select">
+              
+              <% for(lang of it.availableLanguages) { %>
+                <option lang="<%~ lang.iso %>" value="<%~ lang.value %>" <%~lang.iso===it.settings.iso ? 'selected' : ''%>><%~ lang.display_name %></option>
+              <% } %>
+            </select>
+          </form>
+      </div>
+  </div>
+</nav>
