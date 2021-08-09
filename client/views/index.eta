@@ -1,20 +1,26 @@
 <% layout('layouts/layout') %>
 
 <div class="myd_container">
-  <video autoplay muted loop playsinline buffer class="myd_bg-video"  poster="static/img/vid-preview.jpg">
-    <!-- <source src="static/vid/04.webm" type="video/webm" /> -->
-    <!-- <source src="static/vid/04-360p.mp4" type="video/mp4" /> -->
+  <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg">
+    <source src="static/vid/04-360p.mp4" type="video/mp4" />
   </video>
+
   <div class="myd_intro">
     <div class="myd_welcome">
-      <img src="static/img/logo.png" width="100px" height="100px">
+      <img src="static/img/logo.png" width="100px" height="100px" />
       <h1><%= it.hero_title %></h1>
       <h2><%= it.hero_subtitle %></h2>
     </div>
     <a href="#myd_main" class="myd_scroll-indicator">
-      <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g></switch></svg>
+      <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background: new 0 0 100 100" xml:space="preserve">
+        <switch>
+          <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject>
+          <g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g>
+        </switch>
+      </svg>
     </a>
   </div>
+
   <div class="myd_main" id="myd_main">
     <section class="myd_solid">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -24,21 +30,22 @@
             <p class="myd_section-paragraph myd_fade"><%~ it.what_p1 %></p>
             <p class="myd_section-paragraph myd_fade"><%~ it.what_p2 %></p>
             <p class="myd_section-paragraph myd_fade"><%~ it.what_p3 %></p>
-            <%~ it.what_p4 ? `<p class="myd_section-paragraph myd_fade">${it.what_p4}</p>` : "" %>
+            <%~ it.what_p4 ? `
+            <p class="myd_section-paragraph myd_fade">${it.what_p4}</p>
+            ` : "" %>
           </div>
         </div>
       </div>
     </section>
-    <section class="transparent">
+    <section class="myd_transparent">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.benefit_title%></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <div itemprop="text">
-            <p class="myd_section-paragraph myd_fade"><%~ it.benefit_p1 %></p>  
+            <p class="myd_section-paragraph myd_fade"><%~ it.benefit_p1 %></p>
             <p class="myd_section-paragraph myd_fade"><%~ it.benefit_p2 %></p>
           </div>
         </div>
-        
       </div>
     </section>
     <section class="myd_solid">
@@ -46,16 +53,15 @@
         <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.amount_title %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <div itemprop="text">
-            <p class="myd_section-paragraph myd_fade"><%~ it.amount_p1 %></p>  
+            <p class="myd_section-paragraph myd_fade"><%~ it.amount_p1 %></p>
           </div>
         </div>
-        
       </div>
     </section>
     <section class="myd_transparent">
       <div class="myd_section-group">
         <h3 class="myd_section-title myd_fade"><%~ it.compare_title %></h3>
-        
+
         <div class="myd_comparison-grid">
           <h4 class="myd_comparison-title myd_fade"><%~ it.compare_kyat_t %></h4>
           <div class="myd_grid-left myd_bar myd_fade" id="military-kyat"></div>
@@ -67,7 +73,7 @@
           <div class="myd_grid-left myd_fade">0 MYD</div>
           <div class="myd_grid-right myd_fade">27.5 billion MYD</div>
           <p class="myd_grid-left myd_fade"><%~ it.data.name_miltary %></p>
-          <p class="myd_grid-right myd_fade">NUG</p>          
+          <p class="myd_grid-right myd_fade">NUG</p>
           <p class="myd_comparison-paragraph myd_fade"><%~ it.compare_kyat_p_ammounts %></p>
         </div>
 
@@ -89,7 +95,7 @@
           <div class="myd_grid-left myd_fade"><%~ it.data.tx_duration_bitcoin %></div>
           <div class="myd_grid-right myd_fade"><%~ it.data.tx_duration_nano %></div>
           <p class="myd_grid-left myd_fade"><%~ it.data.name_bitcoin %></p>
-          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>          
+          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>
           <p class="myd_comparison-paragraph myd_fade"><%~ it.compare_g1_p %></p>
         </div>
         <div class="myd_comparison-grid">
@@ -99,7 +105,7 @@
           <div class="myd_grid-left myd_fade"><%~ it.data.tx_fee_bitcoin %></div>
           <div class="myd_grid-right myd_fade"><%~ it.data.tx_fee_nano %></div>
           <p class="myd_grid-left myd_fade"><%~ it.data.name_bitcoin %></p>
-          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>  
+          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>
           <p class="myd_comparison-paragraph myd_fade"><%~ it.compare_g2_p %></p>
         </div>
         <div class="myd_comparison-grid">
@@ -109,7 +115,7 @@
           <div class="myd_grid-left myd_fade"><%~ it.data.tx_energy_bitcoin %></div>
           <div class="myd_grid-right myd_fade"><%~ it.data.tx_energy_nano %></div>
           <p class="myd_grid-left myd_fade"><%~ it.data.name_bitcoin %></p>
-          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>     
+          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>
           <p class="myd_comparison-paragraph myd_fade"><%~ it.compare_g3_p %></p>
         </div>
         <div class="myd_comparison-grid">
@@ -119,22 +125,20 @@
           <div class="myd_grid-left myd_fade"><%~ it.data.tx_num_bitcoin %></div>
           <div class="myd_grid-right myd_fade"><%~ it.data.tx_num_nano %></div>
           <p class="myd_grid-left myd_fade"><%~ it.data.name_bitcoin %></p>
-          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>     
+          <p class="myd_grid-right myd_fade"><%~ it.data.name_nano %></p>
           <p class="myd_comparison-paragraph myd_fade"><%~ it.compare_g4_p %></p>
         </div>
       </div>
-      </section>
+    </section>
     <section class="myd_solid">
       <div class="myd_section-group">
         <h3 class="myd_section-title myd_fade"><%~ it.community_title %></h3>
         <p class="myd_section-paragraph myd_fade"><%~ it.community_p1 %></p>
-        <p class="myd_section-paragraph myd_fade" >
-          <%~ it.community_s1 %>
-        </p>  
+        <p class="myd_section-paragraph myd_fade"><%~ it.community_s1 %></p>
         <p class="myd_section-paragraph myd_fade"><%~ it.community_p2 %></p>
       </div>
     </section>
-    <section class="transparent myd_outro">
+    <section class="myd_transparent myd_outro">
       <div class="myd_section-group">
         <h2 class="myd_section-title myd_fade"><%~ it.next_title %></h2>
         <p class="myd_section-paragraph myd_fade">
@@ -150,3 +154,5 @@
     </section>
   </div>
 </div>
+
+<script src="static/js/index.js"></script>

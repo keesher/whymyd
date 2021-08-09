@@ -4,6 +4,9 @@
   "description": "simple nano introduction site",
   "main": "index.js",
   "scripts": {
+    "build:css": "node-sass --watch scss -o client/static/css",
+    "watch": "nodemon",
+    "start": "concurrently \"npm run watch\" \"npm run build:css\"",
     "test": "nodemon"
   },
   "repository": {
@@ -26,10 +29,17 @@
   },
   "homepage": "https://github.com/TheMyanmarDollar/whymyd#readme",
   "dependencies": {
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
     "compression": "^1.7.4",
+    "concurrently": "^6.2.1",
     "dotenv": "^10.0.0",
     "eta": "^1.12.1",
     "express": "^4.17.1",
-    "mongoose": "^5.12.11"
+    "jquery": "^3.6.0",
+    "mongoose": "^5.12.11",
+    "node-sass": "^6.0.1",
+    "npm-watch": "^0.11.0",
+    "popper.js": "^1.16.1"
   }
 }

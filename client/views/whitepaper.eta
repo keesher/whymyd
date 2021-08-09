@@ -1,13 +1,15 @@
 <% layout('layouts/layout') %>
 
 <div class="myd_container">
-  <% /* <video autoplay muted loop playsinline buffer class="bg-video"  poster="static/img/vid-preview.jpg">
-    <!-- <source src="static/vid/04.webm" type="video/webm" /> -->
-    <!-- <source src="static/vid/04-360p.mp4" type="video/mp4" /> -->
-  </video> */ %>
+  <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg"></video>
+
   <div class="myd_main" id="myd_main">
-    <section class="myd_solid">
-      <p>Under Construction!!!</p>
+    <section class="myd_transparent">
+      <p><%= it.page.whitepaper.title %></p>
+      <p><img src="static/img/whitepaper_sample.png" alt="" /></p>
+      <p>
+        <a class="btn btn-primary" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_en.pdf?fbclid=IwAR2unwt_eLprOZPXFi6oReGbRalCIQlMJzbnpYD1uea1NMMLGwxbJGvASyM"><%= it.page.whitepaper.btn_title %> <i class="fas fa-external-link-alt"></i></a>
+      </p>
     </section>
   </div>
 </div>
