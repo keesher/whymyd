@@ -461,10 +461,10 @@ footer {
     margin-top: 30px;
     display: flex; }
     .myd_section-group-2 .btn-container a.btn-android {
-      background: #fff url("/static/img/211599_android_social_icon.svg") no-repeat 10px center;
+      background: #fff url("/static/img/google-playstore-2.svg") no-repeat 10px center;
       background-size: 50px auto; }
     .myd_section-group-2 .btn-container a.btn-ios {
-      background: #fff url("/static/img/211891_apple_social_icon.svg") no-repeat 10px center;
+      background: #fff url("/static/img/apple-icon-2.svg") no-repeat 10px center;
       background-size: 50px auto;
       margin-left: 30px; }
     .myd_section-group-2 .btn-container a {
@@ -475,10 +475,24 @@ footer {
       background: #fff;
       padding-left: 4rem; }
 
-@media screen and (max-width: 866px) {
+/** PAGE - WHITEPAPER */
+.myd_pg-whitepaper h3 {
+  text-align: center; }
+
+.myd_pg-whitepaper .myd_pg-whitepaper-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+@media screen and (max-width: 991px) {
   .myd_section-group-2 {
     flex-direction: column; }
     .myd_section-group-2 div:nth-child(2) {
       text-align: center; }
     .myd_section-group-2 .btn-container {
-      justify-content: center; } }
+      justify-content: center; }
+  .myd_pg-whitepaper-buttons {
+    flex-direction: column !important; }
+    .myd_pg-whitepaper-buttons a:first-child {
+      margin-bottom: 1rem; } }
