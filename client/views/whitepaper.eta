@@ -5,11 +5,16 @@
 
   <div class="myd_main" id="myd_main">
     <section class="myd_transparent">
-      <p><%= it.page.whitepaper.title %></p>
-      <p><img src="static/img/whitepaper_sample.png" alt="" /></p>
-      <p>
-        <a class="btn btn-primary" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_en.pdf?fbclid=IwAR2unwt_eLprOZPXFi6oReGbRalCIQlMJzbnpYD1uea1NMMLGwxbJGvASyM"><%= it.page.whitepaper.btn_title %> <i class="fas fa-external-link-alt"></i></a>
-      </p>
+      <div class="myd_section-group myd_pg-whitepaper" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title" itemprop="name"><%= it.page.whitepaper.title %></h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p><img src="static/img/whitepaper_sample.png" width="100%" alt="" /></p>
+          <p class="myd_pg-whitepaper-buttons">
+            <a class="btn btn-danger" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_mm.pdf"><%= it.page.whitepaper.btn_title_mm %> <i class="fas fa-external-link-alt"></i></a>
+            <a class="btn btn-primary" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_en.pdf"><%= it.page.whitepaper.btn_title_en %> <i class="fas fa-external-link-alt"></i></a>
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 </div>
