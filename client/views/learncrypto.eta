@@ -48,7 +48,7 @@
       </div>
     </section>
 
-    <section class="myd_solid">
+    <section class="myd_transparent">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <p class="myd_section-paragraph"><%~ it.learn_myd_title %></p>
         <h3 class="myd_section-title" itemprop="name"><%~ it.learn_myd_subtitle_1 %></h3>

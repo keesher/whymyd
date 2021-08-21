@@ -569,11 +569,11 @@ footer {
     margin-top: 30px;
     display: flex;
     a.btn-android {
-      background: #fff url("/static/img/211599_android_social_icon.svg") no-repeat 10px center;
+      background: #fff url("/static/img/google-playstore-2.svg") no-repeat 10px center;
       background-size: 50px auto;
     }
     a.btn-ios {
-      background: #fff url("/static/img/211891_apple_social_icon.svg") no-repeat 10px center;
+      background: #fff url("/static/img/apple-icon-2.svg") no-repeat 10px center;
       background-size: 50px auto;
       margin-left: 30px;
     }
@@ -588,7 +588,21 @@ footer {
   }
 }
 
-@media screen and (max-width: 866px) {
+/** PAGE - WHITEPAPER */
+.myd_pg-whitepaper {
+  h3 {
+    text-align: center;
+  }
+
+  .myd_pg-whitepaper-buttons {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 991px) {
   .myd_section-group-2 {
     flex-direction: column;
     div:nth-child(2) {
@@ -596,6 +610,13 @@ footer {
     }
     .btn-container {
       justify-content: center;
+    }
+  }
+
+  .myd_pg-whitepaper-buttons {
+    flex-direction: column !important;
+    a:first-child {
+      margin-bottom: 1rem;
     }
   }
 }

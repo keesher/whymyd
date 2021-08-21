@@ -109,7 +109,8 @@
     },
     "whitepaper": {
       "title": "Myanmar Dollar (MYD) Whitepaper",
-      "btn_title": "Read About MYD Whitepaper (EN)"
+      "btn_title_en": "MYD Whitepaper (EN)",
+      "btn_title_mm": "MYD Whitepaper (MM)"
     },
     "download": {
       "title": "Download MYD Wallet Application",
