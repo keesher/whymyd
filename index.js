@@ -46,7 +46,7 @@ fs.readdir("./languages", (err, filenames) => {
   for (let file of filenames) {
     fs.readFile("./languages/" + file, "utf-8", (err, content) => {
       let iso = file.split(".")[0];
-      content = JSON.parse(content);
+      content = JSON.parse(content)
       content.settings["iso"] = iso;
       languages[iso] = content;
       availableLanguages.push({ iso: iso, value: content.settings.value, display_name: content.settings.display_name });
