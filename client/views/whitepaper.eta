@@ -1,4 +1,4 @@
-<% layout('layouts/layout') %>
+<% layout( 'layouts/layout', { info: { title: it.page.whitepaper.title, url: 'whitepaper' } } ) %>
 
 <div class="myd_container">
   <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg"></video>

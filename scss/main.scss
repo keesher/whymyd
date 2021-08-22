@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 :root {
   --color-dark-blue: #00001b;
   --color-darker-blue: #000034;
@@ -618,5 +620,61 @@ footer {
     a:first-child {
       margin-bottom: 1rem;
     }
+  }
+}
+
+/** PAGE - Footer */
+
+/** PAGE - 404 */
+.myd_page-404 {
+  section.myd_row {
+    display: flex;
+    flex-direction: row;
+    div.myd_col {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 6rem;
+      }
+    }
+  }
+}
+
+/** BREAKPOINTS **/
+@include media-breakpoint-down(lg) {
+  .myd_page-404 {
+    section.myd_row {
+      flex-direction: column;
+      div.myd_col {
+        justify-content: center;
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  #about-section {
+    p:first-child {
+      a {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #about-section {
+    p:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  #myd_button-scrolltotop {
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }

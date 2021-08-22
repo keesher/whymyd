@@ -1,1 +1,15 @@
 @import "base.css";
+
+#myd_button-scrolltotop {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 3rem;
+  bottom: -3rem;
+  transition: bottom 0.3s;
+  z-index: 20;
+  a {
+    font-size: 2rem;
+    color: white;
+  }
+}
