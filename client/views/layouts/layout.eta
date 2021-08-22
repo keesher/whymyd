@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="<%~ it.page_description %>" />
-    <title><%~ it.page_title %></title>
+    <title><%~ it.info ? it.info.title : it.page_title %></title>
 
     <!-- Bootstrap CSS Override -->
     <link rel="stylesheet" href="static/css/bootstrap.css" />
@@ -18,10 +18,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/ico/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/static/ico/favicon-16x16.png" />
     <link rel="manifest" href="/static/site.webmanifest" />
-    <meta property="og:title" content="<%~ it.page_title %>" />
+    <meta property="og:title" content="<%~ it.info ? it.info.title : it.page_title %>" />
     <meta property="og:description" content="<%~ it.page_description %>" />
     <meta property="og:image" content="https://www.myd.money/static/img/preview.png" />
-    <meta property="og:url" content="https://www.myd.money/<%~ it.settings.iso %>" />
+    <meta property="og:url" content="https://www.myd.money/<%~ it.info ? it.info.url : it.settings.iso %>" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://whynano.cc/<%~ it.settings.iso %>" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +41,6 @@
     <% } %> <%~ it.body %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
     <%~ includeFile('./footer.eta', it) %>
   </body>
 </html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="326" height="326" viewBox="0 0 326 326">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #323232;
+      }
+
+      .cls-1, .cls-2 {
+        opacity: 0.2;
+      }
+
+      .cls-2 {
+        fill: red;
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        font-size: 416.667px;
+        fill: #fff;
+        font-family: "Javanese Text";
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="163.094" cy="163.094" r="162.906"/>
+  <path class="cls-2" d="M281.871,171.482v19.674H257.313V260.67h-24.95V96.962L175.525,260.67H152.176L95.605,94.16V260.67H70.656V191.156H45.129V171.482H70.656V152.464H45.129V132.79H70.656V65.074h38.959l46.3,138.492q6.4,19.347,9.34,28.952,3.333-10.673,10.406-31.354l46.831-136.09h34.824V132.79h24.558v19.674H257.313v19.018h24.558Z"/>
+  <text id="_" data-name="?" class="cls-3" x="66" y="308">?</text>
+</svg>

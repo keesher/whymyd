@@ -46,7 +46,7 @@ fs.readdir("./languages", (err, filenames) => {
   for (let file of filenames) {
     fs.readFile("./languages/" + file, "utf-8", (err, content) => {
       let iso = file.split(".")[0];
-      content = JSON.parse(content)
+      content = JSON.parse(content);
       content.settings["iso"] = iso;
       languages[iso] = content;
       availableLanguages.push({ iso: iso, value: content.settings.value, display_name: content.settings.display_name });
@@ -89,12 +89,10 @@ app.get("/downloads", (req, res) => {
   res.render("downloads", { ...languages[selectedLanguage], availableLanguages });
 });
 
-app.get("/bs", (req, res) => {
-  res.render("index_bs");
-});
-
 app.get("/sources", (req, res) => {
-  res.render("sources");
+  const cookies = util.parseCookies(req.headers.cookie);
+  const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
+  res.render("sources", { ...languages[selectedLanguage], availableLanguages });
 });
 
 // robots.txt
@@ -121,7 +119,7 @@ app.get("/:lang", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.render("404");
+  res.render("404", { ...languages[selectedLanguage], availableLanguages });
 });
 
 app.listen(PORT, "127.0.0.1", () => {
