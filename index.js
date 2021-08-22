@@ -119,7 +119,7 @@ app.get("/:lang", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.render("404", { ...languages[selectedLanguage], availableLanguages });
+  res.render("404");
 });
 
 app.listen(PORT, "127.0.0.1", () => {
