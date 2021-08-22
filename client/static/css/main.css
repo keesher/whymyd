@@ -8329,4 +8329,7 @@ footer {
 @media (max-width: 575.98px) {
   #about-section p:first-child {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column; }
+  #myd_button-scrolltotop {
+    left: 50%;
+    transform: translate(-50%, 50%); } }

@@ -7,6 +7,8 @@ if (location.protocol !== "https:" && !location.href.includes("localhost")) {
 const floatingMenuBar = document.querySelector(".hide-on-scroll");
 let prevScrollPos = window.pageYOffset;
 
+const btn_scrollToTop = document.querySelector("#myd_button-scrolltotop");
+
 window.addEventListener("scroll", () => {
   let navbar_height = document.querySelector(".navbar").offsetHeight;
   console.log(navbar_height);
@@ -28,6 +30,12 @@ window.addEventListener("scroll", () => {
   }
 
   prevScrollPos = currentScrollPos;
+
+  if (window.pageYOffset > 300) {
+    btn_scrollToTop.style.bottom = `2rem`;
+  } else {
+    btn_scrollToTop.style.bottom = `-3rem`;
+  }
 });
 
 const aboutButton = document.querySelector("#about-button");
@@ -64,4 +72,9 @@ languagePicker.addEventListener("change", () => {
   const selectedLanguage = languagePicker.selectedOptions[0].getAttribute("lang");
   setCookie("selectedLanguage", selectedLanguage);
   window.location.reload();
+});
+
+btn_scrollToTop.addEventListener("click", function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
