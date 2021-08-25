@@ -11,8 +11,8 @@
           <div class="mb-3 d-block d-lg-none"><img width="80%" height="auto" src="static/img/application.png" alt="" /></div>
           <p><%= it.page.download.description %></p>
           <div class="btn-container">
-            <a class="btn-android" href="https://play.google.com/store/apps/details?id=money.myd.mydwallet" target="_blank">Google Play</a>
-            <a class="btn-ios" href="https://apps.apple.com/app/myd-wallet/id1582088673" target="_blank">App Store</a>
+            <a class="btn-android" href="https://play.google.com/store/apps/details?id=money.myd.mydwallet" target="_blank"><img src="static/img/playstore-badge.png" alt="" /></a>
+            <a class="btn-ios" href="https://apps.apple.com/app/myd-wallet/id1582088673" target="_blank"><img src="static/img/appstore-badge.svg" alt="" /></a>
           </div>
           <div class="mt-3">
             <p class="d-block d-lg-none">Or</p>

@@ -8265,20 +8265,11 @@ footer {
   .myd_section-group-2 .btn-container {
     margin-top: 30px;
     display: flex; }
-    .myd_section-group-2 .btn-container a.btn-android {
-      background: #fff url("/static/img/google-playstore-2.svg") no-repeat 10px center;
-      background-size: 50px auto; }
+    .myd_section-group-2 .btn-container a img {
+      height: 48px;
+      width: auto; }
     .myd_section-group-2 .btn-container a.btn-ios {
-      background: #fff url("/static/img/apple-icon-2.svg") no-repeat 10px center;
-      background-size: 50px auto;
-      margin-left: 30px; }
-    .myd_section-group-2 .btn-container a {
-      color: #000;
-      padding: 1rem;
-      border: 0px solid #ff0000;
-      border-radius: 5px 5px;
-      background: #fff;
-      padding-left: 4rem; }
+      margin-left: 1rem; }
 
 /** PAGE - WHITEPAPER */
 .myd_pg-whitepaper h3, .myd_pg-whitepaper .h3 {
