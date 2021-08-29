@@ -1,5 +1,3 @@
-@import "base.css";
-
 #myd_button-scrolltotop {
   display: flex;
   justify-content: center;
@@ -12,4 +10,8 @@
     font-size: 2rem;
     color: white;
   }
+}
+
+.hide-on-scroll {
+  transition: top 0.3s;
 }
