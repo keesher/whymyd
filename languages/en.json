@@ -6,12 +6,10 @@
   "data": {
     "name_nano": "MYD",
     "name_bitcoin": "Bitcoin",
-
     "name_kyat": "Kyat",
     "name_miltary": "Military",
     "tx_kyat": "13578 Lakh",
     "tx_myd": "2000 MYD",
-
     "tx_duration_bitcoin": "30 min",
     "tx_duration_nano": "0.2s",
     "tx_fee_bitcoin": "$22",
@@ -36,13 +34,10 @@
   "amount_title": "How much is there?",
   "amount_p1": "Only <em>110 Billion MYD</em> will ever exist, and all of them are being distributed to Myanmar. This means <em>no monetary inflation, ever.</em>",
   "compare_title": "How does it compare?",
-
   "compare_kyat_t": "The Kyat is <span class='kyat-green'>military controlled.</span> MYD supports <em>democracy.</em>",
   "compare_kyat_p_ammounts": "The military controls the entire Kyat economy, but 27.5 billion MYD (25%) is being given to the National Unity Government for their treasury.",
-
   "compare_kyat_1_t": "The Kyat is <span class='kyat-green'>unfairly distributed</span> MYD is shared with <em>all citizens.</em>",
   "compare_kyat_p": "If we share out all Kyats in existance, each Myanmar Citizen should have 13578 Lahk, The equivilent of this is 2000 MYD evenly split.",
-
   "compare_g1_t": "Bitcoin is <span class='bitcoin-orange'>slow.</span> MYD is <em>fast.</em>",
   "compare_g1_p": "The average Bitcoin transaction takes 30 min to confirm, MYD transactions are confirmed in less than one second on average.",
   "compare_g2_t": "Bitcoin is <span class='bitcoin-orange'>expensive.</span> MYD is <em>free.</em></em>",
@@ -97,6 +92,7 @@
   "menu_learn": "Learn Crypto",
   "menu_whitepaper": "Whitepaper",
   "menu_downloads": "Downloads",
+  "menu_trade": "Trade MYD",
   "page": {
     "getmyd": {
       "title": "Get MYD",
@@ -115,6 +111,23 @@
     "download": {
       "title": "Download MYD Wallet Application",
       "description": "MYD Wallet is available for iOS on the Apple App Store and for Android on the Google Play Store. There is also an APK download below for Android devices which need it."
+    },
+    "trade": {
+      "title": "MYD Trading",
+      "subtitle": "MYD Trading Guide & how-to",
+      "para_body_1": "Escrow service which takes a percentage of the sale, but is organised by a trusted third party, in case you are buying from someone you don't fully trust. This is the help tide us over until we list on an exchange. There are also other places where trading can be done safely.",
+      "para_title_2": "Trade via Escrow service",
+      "para_body_2": "The price negotiation between both parties (buyer and seller) needs to be settled before using the escrow service and then contacting a trusted third-party (admins or moderators) will begin a safe transaction. In order for the third-party service to make transactions to buyer and seller, the initial transaction to third-party from buyer and seller has to be done beforehand.",
+      "para_title_3": "Trade via Facebook Page",
+      "para_body_3": "Trading MYD can also be done by contacting Facebook page moderators. Take a look at the youtube video below to find out where you can find MYD admins and moderators.",
+      "para_title_4": "Trade via other services",
+      "para_body_4": "You can also trade MYD safely via our discord and telegram channels. The youtube video below also has a detailed explanation of how it can be done."
     }
+  },
+  "footer": {
+    "follow_us": "Follow us",
+    "community": "Community",
+    "myd_airdrop": "MYD Airdrop",
+    "contribute": "Contribute"
   }
 }

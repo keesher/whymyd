@@ -1,0 +1,55 @@
+<% layout( 'layouts/layout', { info: { title: it.page.trade.title, url: 'trade' } } ) %>
+
+<div class="myd_container">
+  <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg"></video>
+
+  <div class="myd_intro">
+    <div class="myd_welcome">
+      <img src="static/img/logo.png" width="100px" height="100px" />
+      <h1><%= it.page.trade.title %></h1>
+      <h2><%= it.page.trade.subtitle %></h2>
+    </div>
+    <a href="#myd_main" class="myd_scroll-indicator">
+      <svg title="scroll indicator" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background: new 0 0 100 100" xml:space="preserve">
+        <switch>
+          <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject>
+          <g i:extraneous="self"><path d="M2.5,31.3c0-2.6,1-5.1,2.9-7.1c3.9-3.9,10.3-3.9,14.2,0L50,54.5l30.4-30.4c3.9-3.9,10.3-3.9,14.2,0    c3.9,3.9,3.9,10.3,0,14.2L57.1,75.8c-1.9,1.9-4.4,2.9-7.1,2.9s-5.2-1.1-7.1-2.9L5.4,38.4C3.5,36.4,2.5,33.8,2.5,31.3z"></path></g>
+        </switch>
+      </svg>
+    </a>
+  </div>
+
+  <div class="myd_main" id="myd_main">
+    <section class="myd_transparent">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.page.trade.title %></h3>
+        <div>
+          <div itemprop="text">
+            <p class="myd_section-paragraph myd_fade"><%~ it.page.trade.para_body_1 %></p>
+            <p class="myd_section-paragraph myd_fade">
+              <br /><b><%~ it.page.trade.para_title_2 %></b><br /><br />
+              <%~ it.page.trade.para_body_2 %>
+            </p>
+            <p class="myd_section-paragraph myd_fade">
+              <br /><b><%~ it.page.trade.para_title_3 %></b><br /><br />
+              <%~ it.page.trade.para_body_3 %>
+            </p>
+            <p class="myd_section-paragraph myd_fade">
+              <br /><b><%~ it.page.trade.para_title_4 %></b><br /><br />
+              <%~ it.page.trade.para_body_4 %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="myd_solid">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title text-center myd_fade" itemprop="name"><%~ it.page.trade.subtitle %></h3>
+        <div class="myd_fade">
+          <iframe width="100%" height="340px" src="https://www.youtube.com/embed/M4CeFbii2To" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

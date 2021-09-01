@@ -7,16 +7,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/getmyd"><%~ it.menu_getmyd %></a>
+                <a class="nav-link <%~ it.info && it.info.url == "getmyd" ? 'active' : '' %>" href="/getmyd"><%~ it.menu_getmyd %></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/learncrypto"><%~ it.menu_learn %></a>
+                <a class="nav-link <%~ it.info && it.info.url == "learncrypto" ? 'active' : '' %>" href="/learncrypto"><%~ it.menu_learn %></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/whitepaper"><%~ it.menu_whitepaper %></a>
+                <a class="nav-link <%~ it.info && it.info.url == "trade" ? 'active' : '' %>" href="/trade"><%~ it.menu_trade %></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/downloads"><%~ it.menu_downloads %></a>
+                <a class="nav-link <%~ it.info && it.info.url == "whitepaper" ? 'active' : '' %>" href="/whitepaper"><%~ it.menu_whitepaper %></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <%~ it.info && it.info.url == "downloads" ? 'active' : '' %>" href="/downloads"><%~ it.menu_downloads %></a>
               </li>
           </ul>
           <form action="" class="language-picker__form">

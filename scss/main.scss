@@ -20,7 +20,7 @@
   :root {
     --color-bg: black;
     --color-fg: var(--color-light-blue);
-    --color-transparent: rgba(0, 0, 0, 0.8);
+    --color-transparent: rgba(0, 0, 0, 0.9);
     --color-fade: rgba(0, 0, 0, 0.001);
   }
 }
@@ -110,10 +110,6 @@ em {
     fill: var(--color-fg);
   }
 }
-
-/* .hidden {
-  opacity: 0;
-} */
 
 .myd_intro {
   h1 {
@@ -434,44 +430,18 @@ svg {
 
 a {
   color: var(--color-strong-red);
+  text-decoration: none;
 }
 
 .myd_steps > a {
   position: relative;
 }
 
-/* .steps > a::before {
-  position: absolute;
-  left: -0.9em;
-  color: var(--color-dark-blue);
-  font-weight: 900;
-  font-size: 1.5rem;
-  z-index: -1;
-}
-
-#wallet::before {
-  content: "1";
-}
-
-
-#faucet::before {
-  content: "2";
-}
-
-#wenano::before {
-  content: "3";
-}
-
-#nano-org::before {
-  content: "4";
-} */
-
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  padding-bottom: 2rem;
+  padding: 6rem;
   font-size: larger;
   width: 100%;
 }
@@ -525,6 +495,49 @@ footer {
     transition: opacity 0.5s;
     opacity: 0;
     display: none;
+  }
+
+  .about-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    div {
+      display: flex;
+      flex-direction: column;
+      h5,
+      p {
+        text-align: center;
+      }
+      a {
+        font-size: 2rem;
+        color: rgb(255, 0, 0);
+        padding: 0 5px;
+      }
+    }
+
+    .btn-badge-facebook:hover {
+      color: #3b5998;
+    }
+    .btn-badge-twitter:hover {
+      color: #00aced;
+    }
+    .btn-badge-telegram:hover {
+      color: #0088cc;
+    }
+    .btn-badge-discord:hover {
+      color: #7289da;
+    }
+    .btn-badge-instagram:hover {
+      color: #bc2a8d;
+    }
+    .btn-badge-github:hover {
+      color: #ffffff;
+    }
+  }
+
+  .about-links {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -594,7 +607,7 @@ footer {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 }
 
@@ -649,6 +662,13 @@ footer {
   }
 }
 
+@include media-breakpoint-down(sm) {
+  #myd_button-scrolltotop {
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
 @include media-breakpoint-up(sm) {
   #about-section {
     p:first-child {
@@ -656,19 +676,5 @@ footer {
         padding: 0 10px;
       }
     }
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  #about-section {
-    p:first-child {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  #myd_button-scrolltotop {
-    left: 50%;
-    transform: translate(-50%, 50%);
   }
 }

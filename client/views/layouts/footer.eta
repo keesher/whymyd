@@ -1,8 +1,44 @@
 <footer>
   <div id="about-section">
-    <p><a href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a> <a href="https://twitter.com/MyanmarDollar">Twitter</a> <a href="https://www.facebook.com/MyanmarDollar" target="_blank" rel="noopener">MYD Project</a></p>
-    <p><%~ it.about_p1 %> myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</p>
-    <p></p>
+    <div class="about-socials">
+      <div>
+        <h5><%~ it.footer.follow_us %></h5>
+        <p>
+          <a class="btn-badge-facebook" href="https://www.facebook.com/MyanmarDollar" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a class="btn-badge-twitter" href="https://twitter.com/MyanmarDollar" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="btn-badge-instagram" href="https://www.instagram.com/the_myanmar_dollar/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </p>
+      </div>
+      <div>
+        <h5><%~ it.footer.community %></h5>
+        <p>
+          <a class="btn-badge-facebook" href="https://www.facebook.com/groups/986251045565074" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a class="btn-badge-telegram" href="https://t.me/myd_info" target="_blank"><i class="fab fa-telegram"></i></a>
+          <a class="btn-badge-discord" href="https://discord.gg/6UwW5TDkps" target="_blank"><i class="fab fa-discord"></i></a>
+        </p>
+      </div>
+      <div>
+        <h5><%~ it.footer.myd_airdrop %></h5>
+        <p>
+          <a class="btn-badge-telegram" href="https://t.me/myd_airdrop_bot" target="_blank"><i class="fab fa-telegram"></i></a>
+        </p>
+      </div>
+      <div>
+        <h5><%~ it.footer.contribute %></h5>
+        <p>
+          <a class="btn-badge-discord" href="https://discord.com/channels/840246651124973599/870846038397816913" target="_blank"><i class="fab fa-discord"></i></a>
+          <a class="btn-badge-github" href="https://github.com/TheMyanmarDollar/" target="_blank"><i class="fab fa-github"></i></a>
+        </p>
+      </div>
+    </div>
+    <p class="about-links">
+      <a class="me-3" href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a>
+      <a href="https://explorer.myd.money/" target="_blank">Explorer</a>
+    </p>
+    <p>
+      <%~ it.about_p1 %> <br />
+      myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr
+    </p>
   </div>
   <button id="about-button"><%~ it.about_button %></button>
 </footer>

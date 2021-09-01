@@ -7822,7 +7822,7 @@ textarea.form-control-lg {
   :root {
     --color-bg: black;
     --color-fg: var(--color-light-blue);
-    --color-transparent: rgba(0, 0, 0, 0.8);
+    --color-transparent: rgba(0, 0, 0, 0.9);
     --color-fade: rgba(0, 0, 0, 0.001); } }
 
 * {
@@ -7893,9 +7893,6 @@ em {
     width: 2rem;
     fill: var(--color-fg); }
 
-/* .hidden {
-  opacity: 0;
-} */
 .myd_intro h1, .myd_intro .h1 {
   width: 100%;
   margin: 2rem 0;
@@ -8151,42 +8148,17 @@ svg {
   flex-direction: column; }
 
 a {
-  color: var(--color-strong-red); }
+  color: var(--color-strong-red);
+  text-decoration: none; }
 
 .myd_steps > a {
   position: relative; }
 
-/* .steps > a::before {
-  position: absolute;
-  left: -0.9em;
-  color: var(--color-dark-blue);
-  font-weight: 900;
-  font-size: 1.5rem;
-  z-index: -1;
-}
-
-#wallet::before {
-  content: "1";
-}
-
-
-#faucet::before {
-  content: "2";
-}
-
-#wenano::before {
-  content: "3";
-}
-
-#nano-org::before {
-  content: "4";
-} */
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  padding-bottom: 2rem;
+  padding: 6rem;
   font-size: larger;
   width: 100%; }
 
@@ -8231,6 +8203,35 @@ footer {
     transition: opacity 0.5s;
     opacity: 0;
     display: none; }
+  #about-section .about-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    #about-section .about-socials div {
+      display: flex;
+      flex-direction: column; }
+      #about-section .about-socials div h5, #about-section .about-socials div .h5,
+      #about-section .about-socials div p {
+        text-align: center; }
+      #about-section .about-socials div a {
+        font-size: 2rem;
+        color: red;
+        padding: 0 5px; }
+    #about-section .about-socials .btn-badge-facebook:hover {
+      color: #3b5998; }
+    #about-section .about-socials .btn-badge-twitter:hover {
+      color: #00aced; }
+    #about-section .about-socials .btn-badge-telegram:hover {
+      color: #0088cc; }
+    #about-section .about-socials .btn-badge-discord:hover {
+      color: #7289da; }
+    #about-section .about-socials .btn-badge-instagram:hover {
+      color: #bc2a8d; }
+    #about-section .about-socials .btn-badge-github:hover {
+      color: #ffffff; }
+  #about-section .about-links {
+    display: flex;
+    justify-content: center; }
 
 #about-button {
   background-color: transparent;
@@ -8279,7 +8280,7 @@ footer {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-evenly; }
 
 @media screen and (max-width: 991px) {
   .myd_section-group-2 {
@@ -8313,14 +8314,11 @@ footer {
       .myd_page-404 section.myd_row div.myd_col h2, .myd_page-404 section.myd_row div.myd_col .h2 {
         text-align: center; } }
 
-@media (min-width: 576px) {
-  #about-section p:first-child a {
-    padding: 0 10px; } }
-
 @media (max-width: 575.98px) {
-  #about-section p:first-child {
-    display: flex;
-    flex-direction: column; }
   #myd_button-scrolltotop {
     left: 50%;
     transform: translate(-50%, 50%); } }
+
+@media (min-width: 576px) {
+  #about-section p:first-child a {
+    padding: 0 10px; } }
