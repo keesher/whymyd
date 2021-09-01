@@ -30,14 +30,6 @@
               <br /><b><%~ it.page.trade.para_title_2 %></b><br /><br />
               <%~ it.page.trade.para_body_2 %>
             </p>
-            <p class="myd_section-paragraph myd_fade">
-              <br /><b><%~ it.page.trade.para_title_3 %></b><br /><br />
-              <%~ it.page.trade.para_body_3 %>
-            </p>
-            <p class="myd_section-paragraph myd_fade">
-              <br /><b><%~ it.page.trade.para_title_4 %></b><br /><br />
-              <%~ it.page.trade.para_body_4 %>
-            </p>
           </div>
         </div>
       </div>
@@ -51,5 +43,24 @@
         </div>
       </div>
     </section>
+
+  <div class="myd_main" id="myd_main">
+    <section class="myd_transparent">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div>
+          <div itemprop="text">
+            <p class="myd_section-paragraph myd_fade">
+              <br /><b><%~ it.page.trade.para_title_3 %></b><br /><br />
+              <%~ it.page.trade.para_body_3 %>
+            </p>
+            <p class="myd_section-paragraph myd_fade">
+              <br /><b><%~ it.page.trade.para_title_4 %></b><br /><br />
+              <%~ it.page.trade.para_body_4 %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </div>
