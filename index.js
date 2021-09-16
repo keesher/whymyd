@@ -95,6 +95,12 @@ app.get("/trade", (req, res) => {
   res.render("trade", { ...languages[selectedLanguage], availableLanguages });
 });
 
+app.get("/mydshops", (req, res) => {
+  const cookies = util.parseCookies(req.headers.cookie);
+  const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
+  res.render("mydshops", { ...languages[selectedLanguage], availableLanguages });
+});
+
 app.get("/sources", (req, res) => {
   const cookies = util.parseCookies(req.headers.cookie);
   const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";

@@ -37,7 +37,7 @@
     </p>
     <p>
       <%~ it.about_p1 %> <br />
-      myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr
+      <a href="https://explorer.myd.money/explorer/account/myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr/history" target="_blank">myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</a>
     </p>
   </div>
   <button id="about-button"><%~ it.about_button %></button>

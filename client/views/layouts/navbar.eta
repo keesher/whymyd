@@ -16,6 +16,9 @@
                 <a class="nav-link <%~ it.info && it.info.url == "trade" ? 'active' : '' %>" href="/trade"><%~ it.menu_trade %></a>
               </li>
               <li class="nav-item">
+                <a class="nav-link <%~ it.info && it.info.url == "mydshops" ? 'active' : '' %>" href="/mydshops"><%~ it.menu_mydshops %></a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link <%~ it.info && it.info.url == "whitepaper" ? 'active' : '' %>" href="/whitepaper"><%~ it.menu_whitepaper %></a>
               </li>
               <li class="nav-item">
