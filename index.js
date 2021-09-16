@@ -6,6 +6,7 @@ const eta = require("eta");
 const fs = require("fs");
 const mongoose = require("mongoose");
 const util = require("./helper/util");
+const _ = require("lodash");
 
 const Request = require("./models/request");
 const { ppid } = require("process");
@@ -98,7 +99,12 @@ app.get("/trade", (req, res) => {
 app.get("/mydshops", (req, res) => {
   const cookies = util.parseCookies(req.headers.cookie);
   const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
-  res.render("mydshops", { ...languages[selectedLanguage], availableLanguages });
+
+  let shopsRaw = fs.readFileSync("./client/db/shops.json");
+  let shops = JSON.parse(shopsRaw);
+  shops = _.chunk(shops.list, 2);
+
+  res.render("mydshops", { ...languages[selectedLanguage], availableLanguages, shops });
 });
 
 app.get("/sources", (req, res) => {

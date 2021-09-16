@@ -33,36 +33,16 @@
 
     <section class="myd_solid" id="shop-list">
       <div class="myd_section-group">
+        <% it.shops.forEach(row => { %>
         <div class="mydshops_list-parent myd_fade">
+          <% row.forEach(col => { %>
           <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/frozenheartentertainment.jpg" alt="frozen heart entertainment" />
-            <h4><a href="https://www.facebook.com/seriesbylink33/" target="_blank">Frozen Heart<br/>Entertainment</a><h4>
+            <img class="mb-4" src="<%~ col.logo_url %>" alt="<%~ col.full_name %>" />
+            <h4><a href="<%~ col.url %>" target="_blank"><%~ col.display_name %></a><h4>
           </div>
-          <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/elliesvintagecollection.jpg" alt="ellie's vintage collection" />
-            <h4><a href="https://www.facebook.com/Ellies-vintage-collection-100570725608076/" target="_blank">Ellie's Vintage<br/>Collection</a></h4>
-          </div>
+          <% }) %>
         </div>
-        <div class="mydshops_list-parent myd_fade">
-          <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/kimchizone.jpg" alt="kimchi zone" />
-            <h4><a href="https://www.facebook.com/kimchizonebythzh/" target="_blank">Kimchi Zone<br/>Korean×Burmese</a></h4>
-          </div>
-          <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/aadi.jpg" alt="aadi clothing" />
-            <h4><a href="https://www.facebook.com/Aadiclothing" target="_blank">Aadi<br/>Clothing</a></h4>
-          </div>
-        </div>
-        <div class="mydshops_list-parent myd_fade">
-          <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/pantayar.jpg" alt="kimchi zone" />
-            <h4><a href="https://www.facebook.com/Pan-Tayar-Food-Drink-105189568470348/" target="_blank">Pan Tayar<br/>Food & Drink</a></h4>
-          </div>
-          <div class="mydshops_list-child mb-5">
-            <img class="mb-4" src="/static/img/logo.png" alt="myanmar dollar" />
-            <h4><a href="https://www.facebook.com/MyanmarDollar" target="_blank">Check Out <br/> For More!</a></h4>
-          </div>
-        </div>
+        <% }) %>
       </div>
     </section>
   </div>

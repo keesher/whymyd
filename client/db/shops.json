@@ -1,0 +1,40 @@
+{
+  "list": [
+    {
+      "display_name": "Frozen Heart<br/>Entertainment",
+      "full_name": "Frozen Heart Entertainment",
+      "url": "https://www.facebook.com/seriesbylink33/",
+      "logo_url": "/static/img/frozenheartentertainment.jpg"
+    },
+    {
+      "display_name": "Ellie's Vintage<br/>Collection",
+      "full_name": "Ellie's Vintage Collection",
+      "url": "https://www.facebook.com/Ellies-vintage-collection-100570725608076/",
+      "logo_url": "/static/img/elliesvintagecollection.jpg"
+    },
+    {
+      "display_name": "Kimchi Zone<br/>Korean×Burmese",
+      "full_name": "Kimchi Zone, KoreanxBurmese Mix",
+      "url": "https://www.facebook.com/kimchizonebythzh/",
+      "logo_url": "/static/img/kimchizone.jpg"
+    },
+    {
+      "display_name": "Aadi<br/>Clothing",
+      "full_name": "Aadi Clothing",
+      "url": "https://www.facebook.com/Aadiclothing",
+      "logo_url": "/static/img/aadi.jpg"
+    },
+    {
+      "display_name": "Pan Tayar<br/>Food & Drink",
+      "full_name": "Pan Tayar Food & Drink",
+      "url": "https://www.facebook.com/Pan-Tayar-Food-Drink-105189568470348/",
+      "logo_url": "/static/img/pantayar.jpg"
+    },
+    {
+      "display_name": "Check out<br/>For more!",
+      "full_name": "Myanmar Dollar",
+      "url": "https://www.facebook.com/MyanmarDollar",
+      "logo_url": "/static/img/logo.png"
+    }
+  ]
+}
