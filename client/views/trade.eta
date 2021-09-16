@@ -43,8 +43,6 @@
         </div>
       </div>
     </section>
-
-  <div class="myd_main" id="myd_main">
     <section class="myd_transparent">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <div>
@@ -61,6 +59,5 @@
         </div>
       </div>
     </section>
-
   </div>
 </div>

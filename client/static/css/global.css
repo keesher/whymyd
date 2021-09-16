@@ -5,7 +5,8 @@
   right: 3rem;
   bottom: -3rem;
   transition: bottom 0.3s;
-  z-index: 20; }
+  z-index: 20;
+  cursor: pointer; }
   #myd_button-scrolltotop a {
     font-size: 2rem;
     color: white; }

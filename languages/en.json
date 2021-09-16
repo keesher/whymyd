@@ -8,8 +8,8 @@
     "name_bitcoin": "Bitcoin",
     "name_kyat": "Kyat",
     "name_miltary": "Military",
-    "tx_kyat": "13578 Lakh",
-    "tx_myd": "2000 MYD",
+    "tx_kyat": "13,578 Lakh",
+    "tx_myd": "2,000 MYD",
     "tx_duration_bitcoin": "30 min",
     "tx_duration_nano": "0.2s",
     "tx_fee_bitcoin": "$22",
@@ -93,6 +93,7 @@
   "menu_whitepaper": "Whitepaper",
   "menu_downloads": "Downloads",
   "menu_trade": "Trade MYD",
+  "menu_mydshops": "MYD Shops",
   "page": {
     "getmyd": {
       "title": "Get MYD",
@@ -122,6 +123,11 @@
       "para_body_3": "Trading can also be done without an escrow agent. While this is more risky, these are some tips to help lower your risk.<br><br>- Use reputable traders - Look at your potential trade partners history in the group, or search for their name in our Discords #report-scammers channel. If they are new and have no trading history, try a smaller amount first. If possible use a buyer or seller you have used previously, even if it costs a bit more.<br><br>- Chunk your transactions - Break down your larger transactions into smaller chunks. For example don't send 10,000 MYD all in one go, send it in chunks of 2500 MYD and require the seller for pay you after each one. This way if you encounter a scammer, you loose a much smaller amount.",
       "para_title_4": "Exchange Trading",
       "para_body_4": "We are not currently listed on any Crypto exchanges, so it is not possible to trade via an exchange at the moment. This is our main focus as we continue to grow though."
+    },
+    "mydshops": {
+      "title": "MYD Shops",
+      "subtitle": "Shops accepting MYD payments",
+      "para_1": "We are proud to introduce you to <a href=\"#shop-list\">the list of online shopping pages and websites</a> that you could pay with Myanmar Dollar (MYD) securely!"
     }
   },
   "footer": {

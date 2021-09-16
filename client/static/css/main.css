@@ -8282,18 +8282,6 @@ footer {
   flex-direction: row;
   justify-content: space-evenly; }
 
-@media screen and (max-width: 991px) {
-  .myd_section-group-2 {
-    flex-direction: column; }
-    .myd_section-group-2 div:nth-child(2) {
-      text-align: center; }
-    .myd_section-group-2 .btn-container {
-      justify-content: center; }
-  .myd_pg-whitepaper-buttons {
-    flex-direction: column !important; }
-    .myd_pg-whitepaper-buttons a:first-child {
-      margin-bottom: 1rem; } }
-
 /** PAGE - Footer */
 /** PAGE - 404 */
 .myd_page-404 section.myd_row {
@@ -8304,6 +8292,22 @@ footer {
     flex-direction: column; }
     .myd_page-404 section.myd_row div.myd_col h2, .myd_page-404 section.myd_row div.myd_col .h2 {
       font-size: 6rem; }
+
+/** PAGE - MYD SHOPS */
+.mydshops_list-parent {
+  display: flex;
+  justify-content: space-evenly; }
+  .mydshops_list-parent .mydshops_list-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .mydshops_list-parent .mydshops_list-child img {
+      width: 200px;
+      height: auto;
+      border-radius: 100%; }
+    .mydshops_list-parent .mydshops_list-child h4, .mydshops_list-parent .mydshops_list-child .h4 {
+      width: 14ch;
+      text-align: center; }
 
 /** BREAKPOINTS **/
 @media (max-width: 991.98px) {
@@ -8317,8 +8321,23 @@ footer {
 @media (max-width: 575.98px) {
   #myd_button-scrolltotop {
     left: 50%;
-    transform: translate(-50%, 50%); } }
+    transform: translate(-50%, 50%); }
+  .mydshops_list-parent {
+    align-items: unset;
+    flex-direction: column; } }
 
 @media (min-width: 576px) {
   #about-section p:first-child a {
     padding: 0 10px; } }
+
+@media screen and (max-width: 991px) {
+  .myd_section-group-2 {
+    flex-direction: column; }
+    .myd_section-group-2 div:nth-child(2) {
+      text-align: center; }
+    .myd_section-group-2 .btn-container {
+      justify-content: center; }
+  .myd_pg-whitepaper-buttons {
+    flex-direction: column !important; }
+    .myd_pg-whitepaper-buttons a:first-child {
+      margin-bottom: 1rem; } }

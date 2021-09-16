@@ -611,25 +611,6 @@ footer {
   }
 }
 
-@media screen and (max-width: 991px) {
-  .myd_section-group-2 {
-    flex-direction: column;
-    div:nth-child(2) {
-      text-align: center;
-    }
-    .btn-container {
-      justify-content: center;
-    }
-  }
-
-  .myd_pg-whitepaper-buttons {
-    flex-direction: column !important;
-    a:first-child {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
 /** PAGE - Footer */
 
 /** PAGE - 404 */
@@ -643,6 +624,27 @@ footer {
       h2 {
         font-size: 6rem;
       }
+    }
+  }
+}
+
+/** PAGE - MYD SHOPS */
+.mydshops_list-parent {
+  display: flex;
+  justify-content: space-evenly;
+
+  .mydshops_list-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 100%;
+    }
+    h4 {
+      width: 14ch;
+      text-align: center;
     }
   }
 }
@@ -667,6 +669,11 @@ footer {
     left: 50%;
     transform: translate(-50%, 50%);
   }
+
+  .mydshops_list-parent {
+    align-items: unset;
+    flex-direction: column;
+  }
 }
 
 @include media-breakpoint-up(sm) {
@@ -675,6 +682,25 @@ footer {
       a {
         padding: 0 10px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .myd_section-group-2 {
+    flex-direction: column;
+    div:nth-child(2) {
+      text-align: center;
+    }
+    .btn-container {
+      justify-content: center;
+    }
+  }
+
+  .myd_pg-whitepaper-buttons {
+    flex-direction: column !important;
+    a:first-child {
+      margin-bottom: 1rem;
     }
   }
 }
