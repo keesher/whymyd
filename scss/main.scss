@@ -567,51 +567,96 @@ footer {
 }
 
 /** PAGE - Downlaad */
-.myd_section-group-2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  div:first-child {
-    text-align: center;
-  }
-
-  div:nth-child(2) {
-    max-width: 50ch;
-  }
-
-  .btn-container {
-    margin-top: 30px;
+#pg-downloads {
+  .myd_section-group-2 {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    a {
-      img {
-        height: 48px;
-        width: auto;
+    div:first-child {
+      text-align: center;
+    }
+
+    div:nth-child(2) {
+      max-width: 50ch;
+    }
+
+    .btn-container {
+      margin-top: 30px;
+      display: flex;
+
+      a {
+        img {
+          height: 48px;
+          width: auto;
+        }
+      }
+
+      a.btn-ios {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .myd_section-group {
+    > div {
+      display: flex;
+      justify-content: space-evenly;
+
+      p {
+        font-size: medium;
       }
     }
 
-    a.btn-ios {
-      margin-left: 1rem;
+    dl {
+      dt {
+        margin-bottom: 0.5rem;
+      }
+      dd {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }
 
 /** PAGE - WHITEPAPER */
-.myd_pg-whitepaper {
-  h3 {
-    text-align: center;
-  }
+#pg-whitepaper {
+  .myd_pg-whitepaper {
+    h3 {
+      text-align: center;
+    }
 
-  .myd_pg-whitepaper-buttons {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    .myd_pg-whitepaper-buttons {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
 }
 
-/** PAGE - Footer */
+/** PAGE - MYD SHOPS */
+#pg-mydshops {
+  .mydshops_list-parent {
+    display: flex;
+    justify-content: space-evenly;
+
+    .mydshops_list-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 200px;
+        height: auto;
+        border-radius: 100%;
+      }
+      h4 {
+        width: 14ch;
+        text-align: center;
+      }
+    }
+  }
+}
 
 /** PAGE - 404 */
 .myd_page-404 {
@@ -624,27 +669,6 @@ footer {
       h2 {
         font-size: 6rem;
       }
-    }
-  }
-}
-
-/** PAGE - MYD SHOPS */
-.mydshops_list-parent {
-  display: flex;
-  justify-content: space-evenly;
-
-  .mydshops_list-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    img {
-      width: 200px;
-      height: auto;
-      border-radius: 100%;
-    }
-    h4 {
-      width: 14ch;
-      text-align: center;
     }
   }
 }
@@ -673,6 +697,14 @@ footer {
   .mydshops_list-parent {
     align-items: unset;
     flex-direction: column;
+  }
+
+  #pg-downloads {
+    .myd_section-group {
+      > div {
+        flex-direction: column;
+      }
+    }
   }
 }
 

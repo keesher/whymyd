@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v5.1.0 (https://getbootstrap.com/)
+ * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -45,7 +45,8 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-rgb: 33, 37, 41;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -5917,7 +5918,7 @@ textarea.form-control-lg {
 
 .text-body {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-body-rgb), var(--bs-text-opacity)) !important; }
+  color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)) !important; }
 
 .text-muted {
   --bs-text-opacity: 1;
@@ -5989,7 +5990,7 @@ textarea.form-control-lg {
 
 .bg-body {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-body-rgb), var(--bs-bg-opacity)) !important; }
+  background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important; }
 
 .bg-transparent {
   --bs-bg-opacity: 1;
@@ -8255,34 +8256,61 @@ footer {
     transform: translateY(1rem); } }
 
 /** PAGE - Downlaad */
-.myd_section-group-2 {
+#pg-downloads .myd_section-group-2 {
   display: flex;
   flex-direction: row;
   align-items: center; }
-  .myd_section-group-2 div:first-child {
+  #pg-downloads .myd_section-group-2 div:first-child {
     text-align: center; }
-  .myd_section-group-2 div:nth-child(2) {
+  #pg-downloads .myd_section-group-2 div:nth-child(2) {
     max-width: 50ch; }
-  .myd_section-group-2 .btn-container {
+  #pg-downloads .myd_section-group-2 .btn-container {
     margin-top: 30px;
     display: flex; }
-    .myd_section-group-2 .btn-container a img {
+    #pg-downloads .myd_section-group-2 .btn-container a img {
       height: 48px;
       width: auto; }
-    .myd_section-group-2 .btn-container a.btn-ios {
+    #pg-downloads .myd_section-group-2 .btn-container a.btn-ios {
       margin-left: 1rem; }
 
+#pg-downloads .myd_section-group > div {
+  display: flex;
+  justify-content: space-evenly; }
+  #pg-downloads .myd_section-group > div p {
+    font-size: medium; }
+
+#pg-downloads .myd_section-group dl dt {
+  margin-bottom: 0.5rem; }
+
+#pg-downloads .myd_section-group dl dd {
+  margin-bottom: 1.5rem; }
+
 /** PAGE - WHITEPAPER */
-.myd_pg-whitepaper h3, .myd_pg-whitepaper .h3 {
+#pg-whitepaper .myd_pg-whitepaper h3, #pg-whitepaper .myd_pg-whitepaper .h3 {
   text-align: center; }
 
-.myd_pg-whitepaper .myd_pg-whitepaper-buttons {
+#pg-whitepaper .myd_pg-whitepaper .myd_pg-whitepaper-buttons {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly; }
 
-/** PAGE - Footer */
+/** PAGE - MYD SHOPS */
+#pg-mydshops .mydshops_list-parent {
+  display: flex;
+  justify-content: space-evenly; }
+  #pg-mydshops .mydshops_list-parent .mydshops_list-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #pg-mydshops .mydshops_list-parent .mydshops_list-child img {
+      width: 200px;
+      height: auto;
+      border-radius: 100%; }
+    #pg-mydshops .mydshops_list-parent .mydshops_list-child h4, #pg-mydshops .mydshops_list-parent .mydshops_list-child .h4 {
+      width: 14ch;
+      text-align: center; }
+
 /** PAGE - 404 */
 .myd_page-404 section.myd_row {
   display: flex;
@@ -8292,22 +8320,6 @@ footer {
     flex-direction: column; }
     .myd_page-404 section.myd_row div.myd_col h2, .myd_page-404 section.myd_row div.myd_col .h2 {
       font-size: 6rem; }
-
-/** PAGE - MYD SHOPS */
-.mydshops_list-parent {
-  display: flex;
-  justify-content: space-evenly; }
-  .mydshops_list-parent .mydshops_list-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .mydshops_list-parent .mydshops_list-child img {
-      width: 200px;
-      height: auto;
-      border-radius: 100%; }
-    .mydshops_list-parent .mydshops_list-child h4, .mydshops_list-parent .mydshops_list-child .h4 {
-      width: 14ch;
-      text-align: center; }
 
 /** BREAKPOINTS **/
 @media (max-width: 991.98px) {
@@ -8324,6 +8336,8 @@ footer {
     transform: translate(-50%, 50%); }
   .mydshops_list-parent {
     align-items: unset;
+    flex-direction: column; }
+  #pg-downloads .myd_section-group > div {
     flex-direction: column; } }
 
 @media (min-width: 576px) {

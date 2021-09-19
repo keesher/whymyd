@@ -1,0 +1,58 @@
+{
+  "list": {
+    "sticker": [
+      {
+        "name": "myd-sticker",
+        "mime": "jpg",
+        "icon": "image"
+      },
+      {
+        "name": "myd-sticker",
+        "mime": "pdf",
+        "icon": "pdf"
+      },
+      {
+        "name": "myd-sticker",
+        "mime": "psd",
+        "icon": "alt"
+      },
+      {
+        "name": "myd-sticker-print-ready",
+        "mime": "jpg",
+        "icon": "image"
+      },
+      {
+        "name": "myd-sticker-specification",
+        "mime": "pdf",
+        "icon": "pdf"
+      }
+    ],
+    "leaflet": [
+      {
+        "name": "myd-leaflet-outside-cover",
+        "mime": "jpg",
+        "icon": "image"
+      },
+      {
+        "name": "myd-leaflet-inside-content",
+        "mime": "jpg",
+        "icon": "image"
+      },
+      {
+        "name": "myd-leaflet-2side",
+        "mime": "pdf",
+        "icon": "pdf"
+      },
+      {
+        "name": "myd-leaflet-2side",
+        "mime": "psd",
+        "icon": "alt"
+      },
+      {
+        "name": "myd-leaflet-specification",
+        "mime": "pdf",
+        "icon": "pdf"
+      }
+    ]
+  }
+}
