@@ -2,27 +2,17 @@
   "list": {
     "sticker": [
       {
-        "name": "myd-sticker",
-        "mime": "jpg",
-        "icon": "image"
-      },
-      {
-        "name": "myd-sticker",
+        "name": "myd-large",
         "mime": "pdf",
         "icon": "pdf"
       },
       {
-        "name": "myd-sticker",
-        "mime": "psd",
-        "icon": "alt"
+        "name": "myd-medium-red",
+        "mime": "pdf",
+        "icon": "pdf"
       },
       {
-        "name": "myd-sticker-print-ready",
-        "mime": "jpg",
-        "icon": "image"
-      },
-      {
-        "name": "myd-sticker-specification",
+        "name": "myd-medium-white",
         "mime": "pdf",
         "icon": "pdf"
       }
