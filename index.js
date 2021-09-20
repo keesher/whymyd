@@ -87,7 +87,12 @@ app.get("/whitepaper", (req, res) => {
 app.get("/downloads", (req, res) => {
   const cookies = util.parseCookies(req.headers.cookie);
   const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
-  res.render("downloads", { ...languages[selectedLanguage], availableLanguages });
+
+  let raw = fs.readFileSync("./client/db/downloads.json");
+  let contents = JSON.parse(raw);
+  contents = contents.list;
+
+  res.render("downloads", { ...languages[selectedLanguage], availableLanguages, contents });
 });
 
 app.get("/trade", (req, res) => {
@@ -100,11 +105,11 @@ app.get("/mydshops", (req, res) => {
   const cookies = util.parseCookies(req.headers.cookie);
   const selectedLanguage = Object.keys(cookies).includes("selectedLanguage") ? cookies.selectedLanguage : "my";
 
-  let shopsRaw = fs.readFileSync("./client/db/shops.json");
-  let shops = JSON.parse(shopsRaw);
-  shops = _.chunk(shops.list, 2);
+  let raw = fs.readFileSync("./client/db/shops.json");
+  let contents = JSON.parse(raw);
+  contents = _.chunk(contents.list, 2);
 
-  res.render("mydshops", { ...languages[selectedLanguage], availableLanguages, shops });
+  res.render("mydshops", { ...languages[selectedLanguage], availableLanguages, contents });
 });
 
 app.get("/sources", (req, res) => {

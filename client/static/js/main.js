@@ -8,10 +8,11 @@ const floatingMenuBar = document.querySelector(".hide-on-scroll");
 let prevScrollPos = window.pageYOffset;
 
 const btn_scrollToTop = document.querySelector("#myd_button-scrolltotop");
+let isScrolling;
+let isGlobalMenuHidden;
 
 window.addEventListener("scroll", () => {
   let navbar_height = document.querySelector(".navbar").offsetHeight;
-  console.log(navbar_height);
   const sections = document.querySelectorAll(".myd_fade");
   const position = window.innerHeight;
   for (let section of sections) {
@@ -25,8 +26,10 @@ window.addEventListener("scroll", () => {
   let currentScrollPos = window.pageYOffset;
   if (prevScrollPos > currentScrollPos) {
     floatingMenuBar.style.top = `0px`;
+    isGlobalMenuHidden = false;
   } else {
     floatingMenuBar.style.top = `-${navbar_height}px`;
+    isGlobalMenuHidden = true;
   }
 
   prevScrollPos = currentScrollPos;
@@ -36,7 +39,19 @@ window.addEventListener("scroll", () => {
   } else {
     btn_scrollToTop.style.bottom = `-3rem`;
   }
+
+  window.clearTimeout(isScrolling);
+  isScrolling = setTimeout(function () {
+    showGlobalMenu();
+  }, 700);
 });
+
+const showGlobalMenu = function () {
+  if (isGlobalMenuHidden) {
+    floatingMenuBar.style.top = `0px`;
+    isGlobalMenuHidden = false;
+  }
+};
 
 const aboutButton = document.querySelector("#about-button");
 const aboutSection = document.querySelector("#about-section");

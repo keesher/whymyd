@@ -1,7 +1,9 @@
 <% layout( 'layouts/layout', { info: { title: it.page.trade.title, url: 'trade' } } ) %>
 
 <div class="myd_container">
-  <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg"></video>
+  <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg">
+    <source src="static/vid/04-360p.mp4" type="video/mp4" />
+  </video>
 
   <div class="myd_intro">
     <div class="myd_welcome">

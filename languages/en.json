@@ -105,13 +105,16 @@
       "subtitle": "An Introduction to Cryptocurrencies"
     },
     "whitepaper": {
-      "title": "Myanmar Dollar (MYD) Whitepaper",
+      "title": "MYD Whitepaper",
+      "subtitle": "Learn more in MYD Whitepaper",
       "btn_title_en": "MYD Whitepaper (EN)",
       "btn_title_mm": "MYD Whitepaper (MM)"
     },
     "download": {
-      "title": "Download MYD Wallet Application",
-      "description": "MYD Wallet is available for iOS on the Apple App Store and for Android on the Google Play Store. There is also an APK download below for Android devices which need it."
+      "title": "MYD Wallet",
+      "subtitle": "Get MYD Wallet Application",
+      "description": "MYD Wallet is available for iOS on the Apple App Store and for Android on the Google Play Store. There is also an APK download below for Android devices which need it.",
+      "description_2": "You will need to uncompression the provided files using certain applications such as <a href=\"https://www.winzip.com/en/download/winzip/\">WinZip</a>, <a href=\"https://www.7-zip.org/\">7-zip</a> and <a href=\"https://www.win-rar.com/start.html?&L=0\">WinRAR</a>. You can download from their official websites."
     },
     "trade": {
       "title": "MYD Trading",
