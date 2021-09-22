@@ -60,22 +60,11 @@
         referer_id = parseFloat(this.value);
     }
 
-    function adStatusCallback(status) {
-        if (status)
-            console.log('Applixir status: ' + status);
-    }
-
     function restartGameAd() {
         var options = {
           zoneId: 4419,
-          devId: 5630,
-          gameId: 6591,
-          custom1: referer_id, 
-          custom2: country, 
-          dMode: 1,
         };
         invokeApplixirVideoUnit(options);
-        restartGame();
     }
 
     function restartGame() {
