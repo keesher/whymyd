@@ -98,7 +98,12 @@
     "getmyd": {
       "title": "MYD ရယူရန်",
       "subtitle": "လွယ်ကူ လျှင်မြန် အခမဲ့",
-      "title_2": "MYD Airdrop နှင့် အသိုင်းအဝိုင်း လမ်းညွှန်ချက်များ"
+      "title_2": "MYD Airdrop နှင့် အသိုင်းအဝိုင်း လမ်းညွှန်ချက်များ",
+      "title_3": "Earn MYD with Gaming & Ads",
+      "referal_code": "Enter your referrer code before playing",
+      "country": "Country: ",
+      "use_us_vpn": "Use a US VPN to earn double rewards",
+      "lower_reward": ", Earning 50% rewards"
     },
     "learncrypto": {
       "title": "Crypto လေ့လာရန်",

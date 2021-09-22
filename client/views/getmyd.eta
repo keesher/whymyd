@@ -1,6 +1,13 @@
 <% layout( 'layouts/layout', { info: { title: it.page.getmyd.title, url: 'getmyd' } } ) %>
 
 <div class="myd_container">
+  // applixer
+  <div id="applixir_vanishing_div" hidden>
+     <iframe id="applixir_parent" allow="autoplay"></iframe>
+  </div>
+  <script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg">
     <source src="static/vid/04-360p.mp4" type="video/mp4" />
   </video>
@@ -31,6 +38,242 @@
       </div>
     </section>
   </div>
+
+  <div class="myd_main" id="myd_main">
+    <section class="myd_solid">
+      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
+        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          
+        <p><%~ it.page.getmyd.referal_code %></p><div class="input-resp">
+            <span>
+                <input  class="textbox" id="num" name="count" type="text" size="15" maxlength="15"  value="" />
+            </span>
+        </div>
+        
+        <p><%~ it.page.getmyd.use_us_vpn %></p><div id="country"></div>
+
+        <hr>
+        <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:322px;height:182px;display:none"></div>
+        <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGameAd()">Restart</button></div>
+        <div id="canvascontainer"><canvas width="320" height="180"></canvas></div>
+        <br>
+        <div style="text-align:center;width:320px;">
+          <button ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
+          <button ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
+          <button ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
+          <button ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
+        </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
+
+<script type='application/javascript'>
+
+var myGameArea;
+var myGamePiece;
+var myObstacles = [];
+var myscore;
+
+var referer_id;
+var country;
+
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+  // Convert key-value pairs to JSON
+  // https://stackoverflow.com/a/39284735/452587
+  data = data.trim().split('\n').reduce(function(obj, pair) {
+    pair = pair.split('=');
+    return obj[pair[0]] = pair[1], obj;
+  }, {});
+  //console.log(data);
+  //console.log(data.loc)
+  country = data.loc;
+  if (country == 'US') {
+    document.getElementById("country").style.color  = "green";
+    document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country;
+  } else {
+    document.getElementById("country").style.color  = "red";
+    document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country + "<%~ it.page.getmyd.lower_reward %>";
+  }
+  
+});
+
+
+// code to put the referer into a variable
+document.getElementById('num').onkeyup = function() {
+    referer_id = parseFloat(this.value);
+    //document.getElementById("test").innerHTML = a || 0;
+}
+
+function adStatusCallback(status) {
+    if (status)
+        console.log('Applixir status: ' + status);
+        restartGame();
+}
+
+function restartGameAd() {
+    var options = {
+      zoneId: 4419,
+      devId: 5630,
+      gameId: 6591,
+      custom1: referer_id,  // optional values such as user ID
+      custom2: country,  // optional values such as reward information
+      dMode: 1,       // dMode 1 for MD5 checksum 0 for no MD5 checksum
+      adStatusCb: adStatusCallback,
+    };
+    invokeApplixirVideoUnit(options);
+    
+}
+
+function restartGame() {
+
+    document.getElementById("myfilter").style.display = "none";
+    document.getElementById("myrestartbutton").style.display = "none";
+    myGameArea.stop();
+    myGameArea.clear();
+    myGameArea = {};
+    myGamePiece = {};
+    myObstacles = [];
+    myscore = {};
+    document.getElementById("canvascontainer").innerHTML = "";
+    startGame();
+}
+
+function startGame() {
+    myGameArea = new gamearea();
+    myGamePiece = new component(30, 30, "red", 10, 75);
+    myscore = new component("15px", "Consolas", "white", 220, 25, "text");
+    myGameArea.start();
+}
+
+function gamearea() {
+    this.canvas = document.createElement("canvas");
+    this.canvas.width = 320;
+    this.canvas.height = 180;    
+    document.getElementById("canvascontainer").appendChild(this.canvas);
+    this.context = this.canvas.getContext("2d");
+    this.pause = false;
+    this.frameNo = 0;
+    this.start = function() {
+        this.interval = setInterval(updateGameArea, 20);
+    }
+    this.stop = function() {
+        clearInterval(this.interval);
+        this.pause = true;
+    }
+    this.clear = function(){
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y, type) {
+
+    this.type = type;
+    if (type == "text") {
+        this.text = color;
+    }
+    this.score = 0;    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (this.type == "text") {
+            ctx.font = this.width + " " + this.height;
+            ctx.fillStyle = color;
+            ctx.fillText(this.text, this.x, this.y);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, y, min, max, height, gap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            document.getElementById("myfilter").style.display = "block";
+            document.getElementById("myrestartbutton").style.display = "block";
+            return;
+        } 
+    }
+    if (myGameArea.pause == false) {
+        myGameArea.clear();
+        myGameArea.frameNo += 1;
+        myscore.score +=1;        
+        if (myGameArea.frameNo == 1 || everyinterval(150)) {
+            x = myGameArea.canvas.width;
+            y = myGameArea.canvas.height - 100;
+            min = 20;
+            max = 100;
+            height = Math.floor(Math.random()*(max-min+1)+min);
+            min = 50;
+            max = 100;
+            gap = Math.floor(Math.random()*(max-min+1)+min);
+            myObstacles.push(new component(10, height, "green", x, 0));
+            myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        }
+        for (i = 0; i < myObstacles.length; i += 1) {
+            myObstacles[i].x += -1;
+            myObstacles[i].update();
+        }
+        myscore.text="SCORE: " + myscore.score;        
+        myscore.update();
+        myGamePiece.x += myGamePiece.speedX;
+        myGamePiece.y += myGamePiece.speedY;    
+        myGamePiece.update();
+    }
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function moveup(e) {
+    myGamePiece.speedY = -1; 
+}
+
+function movedown() {
+    myGamePiece.speedY = 1; 
+}
+
+function moveleft() {
+    myGamePiece.speedX = -1; 
+}
+
+function moveright() {
+    myGamePiece.speedX = 1; 
+}
+
+function clearmove(e) {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
+startGame();
+</script>
+
 
 <script src="static/js/getmyd.js"></script>
