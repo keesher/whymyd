@@ -49,6 +49,9 @@
       adStatusCb: adStatusCallback
     };
 
+    const img = new Image();
+    img.src = '/myd-logo.png';
+
     $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
       data = data.trim().split('\n').reduce(function(obj, pair) {
         pair = pair.split('=');
@@ -94,7 +97,7 @@
 
     function startGame() {
         myGameArea = new gamearea();
-        myGamePiece = new component(30, 30, "red", 10, 75);
+        myGamePiece = new component(30, 30, "red", 10, 75, "player");
         if (myscore.score > 1000) {
            myscore = {}; 
            console.log("resetting score")
@@ -129,12 +132,20 @@
         if (type == "text") {
             this.text = color;
         }
+        if (type == "player") {
+            this.text = color;
+        }
         this.score = 0;    this.width = width;
         this.height = height;
         this.speedX = 0;
         this.speedY = 0;    
         this.x = x;
-        this.y = y;    
+        this.y = y;
+
+        if (type == "player") {
+            this.text = color;
+        }
+
         this.update = function() {
             ctx = myGameArea.context;
             if (this.type == "text") {
@@ -142,8 +153,13 @@
                 ctx.fillStyle = color;
                 ctx.fillText(this.text, this.x, this.y);
             } else {
-                ctx.fillStyle = color;
-                ctx.fillRect(this.x, this.y, this.width, this.height);
+                if (type == "player") {
+                    ctx.drawImage(img, this.x, this.y, this.width, this.height);
+                } else{
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+
             }
         }
         this.crashWith = function(otherobj) {
