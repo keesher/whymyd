@@ -49,11 +49,6 @@
         
         <p><%~ it.page.getmyd.use_us_vpn %></p><div id="country"></div>
 
-        // applixer
-        <div id="applixir_vanishing_div" hidden>
-           <iframe id="applixir_parent" allow="autoplay"></iframe>
-        </div>
-        
         <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:322px;height:182px;display:none"></div>
         <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGameAd()">Restart</button></div>
         <div id="canvascontainer"><canvas width="320" height="180"></canvas></div>
