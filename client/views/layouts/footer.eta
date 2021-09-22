@@ -1,6 +1,6 @@
 <footer>
-  <div id="about-section">
-    <div class="about-socials">
+  <div id="about-section" class="not-selectable">
+    <div class="about-socials not-selectable">
       <div>
         <h5><%~ it.footer.follow_us %></h5>
         <p>
@@ -40,5 +40,5 @@
       <a href="https://explorer.myd.money/explorer/account/myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr/history" target="_blank">myd_1donate14umib9krxm5k7cpr1owe64zozu4zzhhe5ty8quhor6em6m3qbrcr</a>
     </p>
   </div>
-  <button id="about-button"><%~ it.about_button %></button>
+  <button id="about-button" class="not-selectable"><%~ it.about_button %></button>
 </footer>

@@ -3,6 +3,26 @@
 <div class="myd_container">
   <script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+  .not-selectable  {
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+        }
+  br {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    }
+   </style>
 
   <div class="myd_intro">
     <div class="myd_welcome">
@@ -31,33 +51,28 @@
     </section>
   </div>
 
-  <div class="myd_main" id="myd_main">
-    <section class="myd_solid">
-      <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
+  <div class="myd_main not-selectable" id="myd_main">
+    <section class="myd_solid not-selectable">
+      <div class="myd_section-group not-selectable" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 class="myd_section-title myd_fade not-selectable" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          
         <p><%~ it.page.getmyd.referal_code %></p><div class="input-resp">
             <span>
                 <input  class="textbox" id="num" name="count" type="text" size="15" maxlength="15"  value="" />
+                <div id="country" style="padding-bottom:20px;"></div>
             </span>
         </div>
-        
-        <p><%~ it.page.getmyd.use_us_vpn %></p><div id="country"></div>
 
+        <div id="canvascontainer"><canvas width="10" height="180"></canvas></div>
         <div id="applixir_vanishing_div" hidden>
            <iframe id="applixir_parent" allow="autoplay"></iframe>
         </div>
-
-        <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:322px;height:182px;display:none"></div>
-        <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGameAd()">Restart</button></div>
-        <div id="canvascontainer"><canvas width="320" height="180"></canvas></div>
-        <br>
-        <div style="text-align:center;width:320px;">
-          <button ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
-          <button ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
-          <button ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
-          <button ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
+        <div class="not-selectable" style="text-align:center;width:320px;padding-top:10px;padding-bottom:10px;display:block;"><button class="not-selectable" id="myrestartbutton" onclick="restartGame()" disabled>Restart</button><button class="not-selectable" id="earnmydbutton" onclick="earnMYD()" disabled>Earn MYD</button></div>
+        <div class="not-selectable" style="text-align:center;width:320px;">
+          <button class="not-selectable" ontouchstart="moveup()" ontouchend="clearmove()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
+          <button class="not-selectable" ontouchstart="moveleft()" ontouchend="clearmove()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
+          <button class="not-selectable" ontouchstart="moveright()" ontouchend="clearmove()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
+          <button class="not-selectable" ontouchstart="movedown()" ontouchend="clearmove()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
         </div>
 
         </div>
@@ -68,41 +83,17 @@
 
 <script type='application/javascript'>
 
-var myGameArea;
-var myGamePiece;
-var myObstacles = [];
-var myscore;
+    var allowed_countries = ['US','CA','AU','GB','DE','FR','DK','SE','NO'];
 
-var referer_id;
-var country;
+    var myGameArea;
+    var myGamePiece;
+    var myObstacles = [];
+    var myscore;
+    var continue_score = 0 ;
 
-$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-  data = data.trim().split('\n').reduce(function(obj, pair) {
-    pair = pair.split('=');
-    return obj[pair[0]] = pair[1], obj;
-  }, {});
-  country = data.loc;
-  if (country == 'US') {
-    document.getElementById("country").style.color  = "green";
-    document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country;
-  } else {
-    document.getElementById("country").style.color  = "red";
-    document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country + "<%~ it.page.getmyd.lower_reward %>";
-  }
-  
-});
+    var referer_id;
+    var country;
 
-
-document.getElementById('num').onkeyup = function() {
-    referer_id = parseFloat(this.value);
-}
-
-function adStatusCallback(status) {
-    if (status)
-        console.log('Applixir status: ' + status);
-}
-
-function restartGameAd() {
     var options = {
       zoneId: 4419,
       devId: 5630,
@@ -110,156 +101,205 @@ function restartGameAd() {
       custom1: referer_id, 
       custom2: country, 
       dMode: 1,
+      adStatusCb: adStatusCallback
     };
-    invokeApplixirVideoUnit(options);
-    restartGame();
-}
 
-function restartGame() {
+    const img = new Image();
+    img.src = '/myd-logo.png';
 
-    document.getElementById("myfilter").style.display = "none";
-    document.getElementById("myrestartbutton").style.display = "none";
-    myGameArea.stop();
-    myGameArea.clear();
-    myGameArea = {};
-    myGamePiece = {};
-    myObstacles = [];
-    myscore = {};
-    document.getElementById("canvascontainer").innerHTML = "";
-    startGame();
-}
+    $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+      data = data.trim().split('\n').reduce(function(obj, pair) {
+        pair = pair.split('=');
+        return obj[pair[0]] = pair[1], obj;
+      }, {});
+      country = data.loc;
+      options.custom2 = country
+      if ($.inArray(country, allowed_countries) > -1) {
+        document.getElementById("country").style.color  = "green";
+        document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country;
+      } else {
+        document.getElementById("country").style.color  = "red";
+        document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country + "<%~ it.page.getmyd.lower_reward %>";
+      }
+      
+    });
 
-function startGame() {
-    myGameArea = new gamearea();
-    myGamePiece = new component(30, 30, "red", 10, 75);
-    myscore = new component("15px", "Consolas", "white", 220, 25, "text");
-    myGameArea.start();
-}
+    function adStatusCallback(status) {
+        console.log('Ad Status: ' + status);
+    }
 
-function gamearea() {
-    this.canvas = document.createElement("canvas");
-    this.canvas.width = 320;
-    this.canvas.height = 180;    
-    document.getElementById("canvascontainer").appendChild(this.canvas);
-    this.context = this.canvas.getContext("2d");
-    this.pause = false;
-    this.frameNo = 0;
-    this.start = function() {
-        this.interval = setInterval(updateGameArea, 20);
+    document.getElementById('num').onkeyup = function() {
+        referer_id = parseFloat(this.value);
+        options.custom1 = referer_id
     }
-    this.stop = function() {
-        clearInterval(this.interval);
-        this.pause = true;
-    }
-    this.clear = function(){
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
 
-function component(width, height, color, x, y, type) {
+    function earnMYD() {
+        continue_score = 0;
+        document.getElementById("earnmydbutton").disabled = true;
+        invokeApplixirVideoUnit(options);
+    }
 
-    this.type = type;
-    if (type == "text") {
-        this.text = color;
-    }
-    this.score = 0;    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
-        } else {
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
-    }
-    this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
-    }
-}
+    function restartGame() {
 
-function updateGameArea() {
-    var x, y, min, max, height, gap;
-    for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
-            myGameArea.stop();
-            document.getElementById("myfilter").style.display = "block";
-            document.getElementById("myrestartbutton").style.display = "block";
-            return;
-        } 
-    }
-    if (myGameArea.pause == false) {
+        document.getElementById("myrestartbutton").disabled = true;
+        myGameArea.stop();
         myGameArea.clear();
-        myGameArea.frameNo += 1;
-        myscore.score +=1;        
-        if (myGameArea.frameNo == 1 || everyinterval(150)) {
-            x = myGameArea.canvas.width;
-            y = myGameArea.canvas.height - 100;
-            min = 20;
-            max = 100;
-            height = Math.floor(Math.random()*(max-min+1)+min);
-            min = 50;
-            max = 100;
-            gap = Math.floor(Math.random()*(max-min+1)+min);
-            myObstacles.push(new component(10, height, "green", x, 0));
-            myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
-        }
-        for (i = 0; i < myObstacles.length; i += 1) {
-            myObstacles[i].x += -1;
-            myObstacles[i].update();
-        }
-        myscore.text="SCORE: " + myscore.score;        
-        myscore.update();
-        myGamePiece.x += myGamePiece.speedX;
-        myGamePiece.y += myGamePiece.speedY;    
-        myGamePiece.update();
+        myGameArea = {};
+        myGamePiece = {};
+        myObstacles = [];
+        myscore = {};
+        document.getElementById("canvascontainer").innerHTML = "";
+        startGame();
     }
-}
 
-function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-    return false;
-}
+    function startGame() {
+        myGameArea = new gamearea();
+        myGamePiece = new component(30, 30, "red", 10, 75, "player");
+        myscore = new component("15px", "Consolas", "white", 220, 25, "text");
+        myscore.score = continue_score;
+        myGameArea.start();
+    }
 
-function moveup(e) {
-    myGamePiece.speedY = -1; 
-}
+    function gamearea() {
+        this.canvas = document.createElement("canvas");
+        this.canvas.width = 320;
+        this.canvas.height = 180;    
+        document.getElementById("canvascontainer").appendChild(this.canvas);
+        this.context = this.canvas.getContext("2d");
+        this.pause = false;
+        this.frameNo = 0;
+        this.start = function() {
+            this.interval = setInterval(updateGameArea, 20);
+        }
+        this.stop = function() {
+            clearInterval(this.interval);
+            this.pause = true;
+        }
+        this.clear = function(){
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+    }
 
-function movedown() {
-    myGamePiece.speedY = 1; 
-}
+    function component(width, height, color, x, y, type) {
 
-function moveleft() {
-    myGamePiece.speedX = -1; 
-}
+        this.type = type;
+        if (type == "text") {
+            this.text = color;
+        }
+        if (type == "player") {
+            this.text = color;
+        }
+        this.score = 0;    this.width = width;
+        this.height = height;
+        this.speedX = 0;
+        this.speedY = 0;    
+        this.x = x;
+        this.y = y;
 
-function moveright() {
-    myGamePiece.speedX = 1; 
-}
+        if (type == "player") {
+            this.text = color;
+        }
 
-function clearmove(e) {
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
-}
-startGame();
-</script>
+        this.update = function() {
+            ctx = myGameArea.context;
+            if (this.type == "text") {
+                ctx.font = this.width + " " + this.height;
+                ctx.fillStyle = color;
+                ctx.fillText(this.text, this.x, this.y);
+            } else {
+                if (type == "player") {
+                    ctx.drawImage(img, this.x, this.y, this.width, this.height);
+                } else{
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+
+            }
+        }
+        this.crashWith = function(otherobj) {
+            var myleft = this.x;
+            var myright = this.x + (this.width);
+            var mytop = this.y;
+            var mybottom = this.y + (this.height);
+            var otherleft = otherobj.x;
+            var otherright = otherobj.x + (otherobj.width);
+            var othertop = otherobj.y;
+            var otherbottom = otherobj.y + (otherobj.height);
+            var crash = true;
+            if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                crash = false;
+            }
+            return crash;
+        }
+    }
+
+    function updateGameArea() {
+        var x, y, min, max, height, gap;
+        for (i = 0; i < myObstacles.length; i += 1) {
+            if (myGamePiece.crashWith(myObstacles[i])) {
+                myGameArea.stop();
+                continue_score = myscore.score;
+                document.getElementById("myrestartbutton").disabled = false;
+                if (continue_score > 1000) {
+                    document.getElementById("earnmydbutton").disabled = false;
+                }
+                return;
+            } 
+        }
+        if (myGameArea.pause == false) {
+            myGameArea.clear();
+            myGameArea.frameNo += 1;
+            myscore.score +=1;        
+            if (myGameArea.frameNo == 1 || everyinterval(150)) {
+                x = myGameArea.canvas.width;
+                y = myGameArea.canvas.height - 100;
+                min = 20;
+                max = 100;
+                height = Math.floor(Math.random()*(max-min+1)+min);
+                min = 50;
+                max = 100;
+                gap = Math.floor(Math.random()*(max-min+1)+min);
+                myObstacles.push(new component(10, height, "green", x, 0));
+                myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+            }
+            for (i = 0; i < myObstacles.length; i += 1) {
+                myObstacles[i].x += -1;
+                myObstacles[i].update();
+            }
+            myscore.text="SCORE: " + myscore.score;        
+            myscore.update();
+            myGamePiece.x += myGamePiece.speedX;
+            myGamePiece.y += myGamePiece.speedY;    
+            myGamePiece.update();
+        }
+    }
+
+    function everyinterval(n) {
+        if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+        return false;
+    }
+
+    function moveup(e) {
+        myGamePiece.speedY = -1; 
+    }
+
+    function movedown() {
+        myGamePiece.speedY = 1; 
+    }
+
+    function moveleft() {
+        myGamePiece.speedX = -1; 
+    }
+
+    function moveright() {
+        myGamePiece.speedX = 1; 
+    }
+
+    function clearmove(e) {
+        myGamePiece.speedX = 0; 
+        myGamePiece.speedY = 0; 
+    }
+    startGame();
+    </script>
 
 <script src="static/js/getmyd.js"></script>
