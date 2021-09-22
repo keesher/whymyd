@@ -39,10 +39,7 @@
     var referer_id;
     var country;
 
-    var options = {
-      zoneId: 2050,
-      adStatusCb: adStatusCallback
-    };
+
 
     $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
       data = data.trim().split('\n').reduce(function(obj, pair) {
@@ -165,6 +162,15 @@
                 document.getElementById("myfilter").style.display = "block";
                 document.getElementById("myrestartbutton").style.display = "block";
                 if (myscore.score > 1000) {
+                    var options = {
+                      zoneId: 2050,
+                      devId: 5630,
+                      gameId: 6591,
+                      custom1: referer_id, 
+                      custom2: country, 
+                      dMode: 1,
+                      adStatusCb: adStatusCallback
+                    };
                     invokeApplixirVideoUnit(options);
                 }
                 return;
