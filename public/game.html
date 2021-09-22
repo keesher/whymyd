@@ -34,7 +34,7 @@
     var myGameArea;
     var myGamePiece;
     var myObstacles = [];
-    var myscore;
+    var myscore = new component("15px", "Consolas", "black", 220, 25, "text");
 
     var referer_id;
     var country;
@@ -89,7 +89,11 @@
     function startGame() {
         myGameArea = new gamearea();
         myGamePiece = new component(30, 30, "red", 10, 75);
-        myscore = new component("15px", "Consolas", "black", 220, 25, "text");
+        if (myscore.score > 1000) {
+           myscore = {}; 
+           console.log("resetting score")
+           myscore = new component("15px", "Consolas", "black", 220, 25, "text");
+        }
         myGameArea.start();
     }
 
