@@ -16,6 +16,7 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/static", express.static(path.join(__dirname, "./client", "static")));
+app.use(express.static('public'))
 
 app.engine("eta", eta.renderFile);
 app.set("view engine", "eta");
