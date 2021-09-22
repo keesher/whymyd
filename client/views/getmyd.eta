@@ -48,6 +48,10 @@
         
         <p><%~ it.page.getmyd.use_us_vpn %></p><div id="country"></div>
 
+        <div id="applixir_vanishing_div" hidden>
+           <iframe id="applixir_parent" allow="autoplay"></iframe>
+        </div>
+
         <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:322px;height:182px;display:none"></div>
         <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGameAd()">Restart</button></div>
         <div id="canvascontainer"><canvas width="320" height="180"></canvas></div>
@@ -74,6 +78,16 @@ var myscore;
 
 var referer_id;
 var country;
+
+var options = {
+  zoneId: 4419,
+  devId: 5630,
+  gameId: 6591,
+  custom1: referer_id,  // optional values such as user ID
+  custom2: country,  // optional values such as reward information
+  dMode: 1,       // dMode 1 for MD5 checksum 0 for no MD5 checksum
+  adStatusCb: adStatusCallback,
+};
 
 $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
   // Convert key-value pairs to JSON
@@ -105,21 +119,11 @@ document.getElementById('num').onkeyup = function() {
 function adStatusCallback(status) {
     if (status)
         console.log('Applixir status: ' + status);
-        restartGame();
 }
 
 function restartGameAd() {
-    var options = {
-      zoneId: 4419,
-      devId: 5630,
-      gameId: 6591,
-      custom1: referer_id,  // optional values such as user ID
-      custom2: country,  // optional values such as reward information
-      dMode: 1,       // dMode 1 for MD5 checksum 0 for no MD5 checksum
-      adStatusCb: adStatusCallback,
-    };
     invokeApplixirVideoUnit(options);
-    
+    restartGame();
 }
 
 function restartGame() {
