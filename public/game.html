@@ -34,7 +34,8 @@
     var myGameArea;
     var myGamePiece;
     var myObstacles = [];
-    var myscore = new component("15px", "Consolas", "black", 220, 25, "text");
+    var myscore;
+    var continue_score = 0 ;
 
     var referer_id;
     var country;
@@ -87,10 +88,7 @@
         myGameArea = {};
         myGamePiece = {};
         myObstacles = [];
-        if (myscore.score > 1000) {
-            myscore = {};
-            console.log("resetting score")
-        }
+        myscore = {};
         document.getElementById("canvascontainer").innerHTML = "";
         startGame();
     }
@@ -98,11 +96,8 @@
     function startGame() {
         myGameArea = new gamearea();
         myGamePiece = new component(30, 30, "red", 10, 75, "player");
-        if (myscore.score > 1000) {
-           myscore = {}; 
-           console.log("resetting score")
-           myscore = new component("15px", "Consolas", "black", 220, 25, "text");
-        }
+        myscore = new component("15px", "Consolas", "black", 220, 25, "text");
+        myscore.score = continue_score;
         myGameArea.start();
     }
 
@@ -184,9 +179,11 @@
         for (i = 0; i < myObstacles.length; i += 1) {
             if (myGamePiece.crashWith(myObstacles[i])) {
                 myGameArea.stop();
+                continue_score = continue_score + myscore.score;
                 document.getElementById("myfilter").style.display = "block";
                 document.getElementById("myrestartbutton").style.display = "block";
-                if (myscore.score > 1000) {
+                if (continue_score > 1000) {
+                    continue_score = 0;
                     invokeApplixirVideoUnit(options);
                 }
                 return;

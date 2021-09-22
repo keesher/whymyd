@@ -33,9 +33,6 @@
     </noscript>
   </head>
   <body id="pg-<%~ it.info ? it.info.url : "default" %>">
-    <div id="applixir_vanishing_div" hidden>
-       <iframe id="applixir_parent" allow="autoplay"></iframe>
-    </div>
     
     <%~ includeFile('./navbar.eta', it) %>
     <!-- blank -->
