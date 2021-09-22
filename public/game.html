@@ -19,7 +19,7 @@
     <p>Please use a US VPN</p><div id="country"></div>
 
     <div id="myfilter" style="position:absolute;background-color:#000000;opacity:0.3;width:322px;height:182px;display:none"></div>
-    <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGameAd()">Restart</button></div>
+    <div id="myrestartbutton" style="position:absolute;padding-top:75px;padding-left:120px;display:none;"><button onclick="restartGame()">Restart</button></div>
     <div id="canvascontainer"><canvas width="320" height="180"></canvas></div>
     <br>
     <div style="text-align:center;width:320px;">
@@ -52,10 +52,10 @@
       country = data.loc;
       if (country == 'US') {
         document.getElementById("country").style.color  = "green";
-        document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country;
+        document.getElementById("country").innerHTML = "Country: " + country;
       } else {
         document.getElementById("country").style.color  = "red";
-        document.getElementById("country").innerHTML = "<%~ it.page.getmyd.country %>" + country + "<%~ it.page.getmyd.lower_reward %>";
+        document.getElementById("country").innerHTML = "Country: " + country + ", please change to a US VPN to double your reward";
       }
       
     });
@@ -68,9 +68,6 @@
         referer_id = parseFloat(this.value);
     }
 
-    function restartGameAd() {
-        invokeApplixirVideoUnit(options);
-    }
 
     function restartGame() {
 
@@ -81,7 +78,9 @@
         myGameArea = {};
         myGamePiece = {};
         myObstacles = [];
-        myscore = {};
+        if (myscore.score > 1000) {
+            myscore = {};
+        }
         document.getElementById("canvascontainer").innerHTML = "";
         startGame();
     }
@@ -160,6 +159,9 @@
                 myGameArea.stop();
                 document.getElementById("myfilter").style.display = "block";
                 document.getElementById("myrestartbutton").style.display = "block";
+                if (myscore.score > 1000) {
+                    invokeApplixirVideoUnit(options);
+                }
                 return;
             } 
         }
