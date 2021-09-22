@@ -39,6 +39,11 @@
     var referer_id;
     var country;
 
+    var options = {
+      zoneId: 2050,
+      adStatusCb: adStatusCallback
+    };
+
     $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
       data = data.trim().split('\n').reduce(function(obj, pair) {
         pair = pair.split('=');
@@ -55,15 +60,15 @@
       
     });
 
+    function adStatusCallback(status) {
+        console.log('Ad Status: ' + status);
+    }
 
     document.getElementById('num').onkeyup = function() {
         referer_id = parseFloat(this.value);
     }
 
     function restartGameAd() {
-        var options = {
-          zoneId: 2050,
-        };
         invokeApplixirVideoUnit(options);
     }
 
