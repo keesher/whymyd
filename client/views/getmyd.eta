@@ -1,7 +1,6 @@
 <% layout( 'layouts/layout', { info: { title: it.page.getmyd.title, url: 'getmyd' } } ) %>
 
 <div class="myd_container">
-  <script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   //<video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg">
@@ -270,5 +269,6 @@ function clearmove(e) {
 startGame();
 </script>
 
+<script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
 
 <script src="static/js/getmyd.js"></script>
