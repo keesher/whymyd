@@ -3,10 +3,6 @@
 <div class="myd_container">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  //<video autoplay muted loop playsinline buffer class="myd_bg-video" poster="static/img/vid-preview.jpg">
-  //  <source src="static/vid/04-360p.mp4" type="video/mp4" />
-  //</video>
-
   <div class="myd_intro">
     <div class="myd_welcome">
       <img src="static/img/logo.png" width="100px" height="100px" />
@@ -79,25 +75,11 @@ var myscore;
 var referer_id;
 var country;
 
-var options = {
-  zoneId: 4419,
-  devId: 5630,
-  gameId: 6591,
-  custom1: referer_id,  // optional values such as user ID
-  custom2: country,  // optional values such as reward information
-  dMode: 1,       // dMode 1 for MD5 checksum 0 for no MD5 checksum
-  adStatusCb: adStatusCallback,
-};
-
 $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-  // Convert key-value pairs to JSON
-  // https://stackoverflow.com/a/39284735/452587
   data = data.trim().split('\n').reduce(function(obj, pair) {
     pair = pair.split('=');
     return obj[pair[0]] = pair[1], obj;
   }, {});
-  //console.log(data);
-  //console.log(data.loc)
   country = data.loc;
   if (country == 'US') {
     document.getElementById("country").style.color  = "green";
@@ -110,10 +92,8 @@ $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
 });
 
 
-// code to put the referer into a variable
 document.getElementById('num').onkeyup = function() {
     referer_id = parseFloat(this.value);
-    //document.getElementById("test").innerHTML = a || 0;
 }
 
 function adStatusCallback(status) {
@@ -122,6 +102,14 @@ function adStatusCallback(status) {
 }
 
 function restartGameAd() {
+    var options = {
+      zoneId: 4419,
+      devId: 5630,
+      gameId: 6591,
+      custom1: referer_id, 
+      custom2: country, 
+      dMode: 1,
+    };
     invokeApplixirVideoUnit(options);
     restartGame();
 }
