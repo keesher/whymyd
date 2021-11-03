@@ -33,7 +33,8 @@
     </div>
     <p class="about-links">
       <a class="me-3" href="/sources"><%~ it.about_sources ? it.about_sources : "Sources"%></a>
-      <a href="https://explorer.myd.money/" target="_blank">Explorer</a>
+      <a class="me-3" href="https://explorer.myd.money/" target="_blank">Explorer</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#recruitment_modal">Recruitment</a>
     </p>
     <p>
       <%~ it.about_p1 %> <br />

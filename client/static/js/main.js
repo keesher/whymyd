@@ -69,7 +69,7 @@ function getCookies(name = "") {
   let cookies = {};
   for (let cookie of document.cookie.split(";")) {
     let [key, value] = cookie.split("=");
-    cookies[key] = value;
+    cookies[key.trim()] = value.trim();
   }
   if (name) {
     // return value if cookie exist, return undefined otherwise
@@ -93,3 +93,32 @@ btn_scrollToTop.addEventListener("click", function () {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+// show popup at startup
+let recruitment_popup_cookie = getCookies("recruitment_popup");
+let recruitment_modal = new bootstrap.Modal(document.getElementById("recruitment_modal"));
+let btn_doNotShow = document.querySelector("#recruitment_modal_donotshow");
+
+/** do not show again checkbox action */
+btn_doNotShow.addEventListener("change", function () {
+  setCookie("recruitment_popup", 1);
+
+  if (this.checked) {
+    setCookie("recruitment_popup", 0);
+  }
+
+  console.log(getCookies("recruitment_popup"));
+});
+
+// if cookie is set
+if (typeof recruitment_popup_cookie !== "undefined") {
+  // 0 or 1
+  recruitment_popup_cookie = parseInt(recruitment_popup_cookie);
+  // has cookie but enabled to show
+  if (recruitment_popup_cookie) {
+    recruitment_modal.show();
+  }
+} else {
+  setCookie("recruitment_popup", 1);
+  recruitment_modal.show();
+}

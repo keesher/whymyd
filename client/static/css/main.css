@@ -8321,6 +8321,10 @@ footer {
     .myd_page-404 section.myd_row div.myd_col h2, .myd_page-404 section.myd_row div.myd_col .h2 {
       font-size: 6rem; }
 
+/** POPUP */
+#recruitment_modal {
+  color: rgba(0, 0, 0, 0.9); }
+
 /** BREAKPOINTS **/
 @media (max-width: 991.98px) {
   .myd_page-404 section.myd_row {

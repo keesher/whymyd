@@ -1,0 +1,27 @@
+<div class="modal fade" id="recruitment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-bell"></i> RECRUITMENT ALERT</h5>
+        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img width="100%" height="auto" src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.6435-9/248422860_214497057438663_6268261503106095296_n.png?_nc_cat=108&ccb=1-5&_nc_sid=730e14&_nc_ohc=6PI9u9waD3gAX9XpDT-&_nc_ht=scontent-nrt1-1.xx&oh=5dfee087c6bbf51ca1f6cfb3ccbc8b98&oe=61A8CE68" alt="MYD Recruitment" /><br /><br />
+        We are bringing new volunteers into the MYD team to help out as we continue to grow 📈<br /><br />
+        Only pro-democracy people, who condemn the coup and view SAC as an illigitimate government are eligible for positions in the Myanmar Dollar Project.<br /><br />
+        People taking part in the Civil Disobedience Movement (CDM) will be preferential candidates. <br /><br />
+        Please refer to our Recruitment Document below for further details on the positions and application process.<br /><br />
+        Please remember that all of these positions are voluntary and go towards building a better future for Myanmar. Please help us as much as you are able to 🙏<br /><br />
+        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1GyqPOODVEYvzFHa24kpoKnl-vctOdsLG%2Fview%3Fusp%3Dsharing%26fbclid%3DIwAR3V5tx11mQqSN9g5N-v860RVxNUGk87GPq1csmvldzm8zrw-Tm9tqSVKOk&h=AT18Jkn41t7nT65h7B95BH_A5LjHIuAg74cqDsiewJwXRwcbcLqswo-Rn08eU6Rkx_s9L1at-lVX8WtvxMjcu1ttnS2-WnU4-9DgTh5ni3oOmKIRySsG6IkS5HoG8-PDJw&__tn__=-UK-R&c[0]=AT1UXM6U9qi1ctzRlcyG1_kIrHN10YeNhmapbG8Tk3LcAYBGNc8IrphATRZiR7WLk_Hd09Na4oc0hVDT6iSutQjwrwz6cmtQr_X9CzW1eeMzCB5ZLezG_ZbWHy5SOuZwx38oeLCgFGr8mEcv-dsjM5POyU9Uww4WYcnwtxR5glN2_A" target="_blank"><i class="fas fa-file-pdf"></i> MYD Recruitment PDF</a>
+      </div>
+      <div class="modal-footer mx-auto">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="recruitment_modal_donotshow" />
+          <label class="form-check-label" for="recruitment_modal_donotshow"> Do not show this again </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -673,6 +673,11 @@ footer {
   }
 }
 
+/** POPUP */
+#recruitment_modal {
+  color: rgba(0, 0, 0, 0.9);
+}
+
 /** BREAKPOINTS **/
 @include media-breakpoint-down(lg) {
   .myd_page-404 {
