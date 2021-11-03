@@ -106,8 +106,6 @@ btn_doNotShow.addEventListener("change", function () {
   if (this.checked) {
     setCookie("recruitment_popup", 0);
   }
-
-  console.log(getCookies("recruitment_popup"));
 });
 
 // if cookie is set
