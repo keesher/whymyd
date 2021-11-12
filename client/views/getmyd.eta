@@ -75,7 +75,7 @@
           <button class="not-selectable" ontouchstart="moveright()" ontouchend="clearmove()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
           <button class="not-selectable" ontouchstart="movedown()" ontouchend="clearmove()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
         </div>
-        -->
+        Coming soon.
         </div>
       </div>
     </section>
