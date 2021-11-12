@@ -26,7 +26,7 @@
       <div class="myd_section-group myd_pg-whitepaper" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title" itemprop="name"><%= it.page.whitepaper.title %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          /*<iframe width="100%" height="340" src="https://www.youtube.com/embed/HPcYB2PMdFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/
+          <!-- <iframe width="100%" height="340" src="https://www.youtube.com/embed/HPcYB2PMdFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           <p class="myd_pg-whitepaper-buttons">
             <a class="btn btn-danger" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_mm.pdf"><%= it.page.whitepaper.btn_title_mm %> <i class="fas fa-external-link-alt"></i></a>
             <a class="btn btn-primary" target="_blank" href="https://www.myd.money/downloads/MYD_Whitepaper_en.pdf"><%= it.page.whitepaper.btn_title_en %> <i class="fas fa-external-link-alt"></i></a>
