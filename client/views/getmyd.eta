@@ -40,7 +40,7 @@
     </a>
   </div>
 
-  <div class="myd_main" id="myd_main">
+  /*<div class="myd_main" id="myd_main">
     <section class="myd_solid">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.page.getmyd.title_2 %></h3>
@@ -49,9 +49,9 @@
         </div>
       </div>
     </section>
-  </div>
+  </div>*/
 
-  <div class="myd_main not-selectable" id="myd_main">
+  /*<div class="myd_main not-selectable" id="myd_main">
     <section class="myd_solid not-selectable">
       <div class="myd_section-group not-selectable" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title myd_fade not-selectable" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </div>*/
 </div>
 
 <script type='application/javascript'>
