@@ -45,41 +45,40 @@
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title myd_fade" itemprop="name"><%~ it.page.getmyd.title_2 %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p>Coming Soon</p>
-          <!–– <iframe width="100%" height="340px" src="https://www.youtube.com/embed/l7m6JgIidBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" height="340px" src="https://www.youtube.com/embed/l7m6JgIidBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
   </div>
 
-  <div class="myd_main not-selectable" id="myd_main">
+  <!-- <div class="myd_main not-selectable" id="myd_main">
     <section class="myd_solid not-selectable">
       <div class="myd_section-group not-selectable" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 class="myd_section-title myd_fade not-selectable" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
-        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p><%~ it.page.getmyd.referal_code %></p><div class="input-resp">
-            <span>
-                <input  class="textbox" id="num" name="count" type="text" size="15" maxlength="15"  value="" />
-                <div id="country" style="padding-bottom:20px;"></div>
-            </span>
-        </div>
+            <h3 class="myd_section-title myd_fade not-selectable" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p><%~ it.page.getmyd.referal_code %></p><div class="input-resp">
+                <span>
+                    <input  class="textbox" id="num" name="count" type="text" size="15" maxlength="15"  value="" />
+                    <div id="country" style="padding-bottom:20px;"></div>
+                </span>
+            </div>
 
-        <div id="canvascontainer"><canvas width="10" height="180"></canvas></div>
-        <div id="applixir_vanishing_div" hidden>
-           <iframe id="applixir_parent" allow="autoplay"></iframe>
-        </div>
-        <div class="not-selectable" style="text-align:center;width:320px;padding-top:10px;padding-bottom:10px;display:block;"><button class="not-selectable" id="myrestartbutton" onclick="restartGame()" disabled>Restart</button><button class="not-selectable" id="earnmydbutton" onclick="earnMYD()" disabled>Earn MYD</button></div>
-        <div class="not-selectable" style="text-align:center;width:320px;">
-          <button class="not-selectable" ontouchstart="moveup()" ontouchend="clearmove()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
-          <button class="not-selectable" ontouchstart="moveleft()" ontouchend="clearmove()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
-          <button class="not-selectable" ontouchstart="moveright()" ontouchend="clearmove()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
-          <button class="not-selectable" ontouchstart="movedown()" ontouchend="clearmove()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
-        </div>
-        Coming soon.
+            <div id="canvascontainer"><canvas width="10" height="180"></canvas></div>
+            <div id="applixir_vanishing_div" hidden>
+               <iframe id="applixir_parent" allow="autoplay"></iframe>
+            </div>
+            <div class="not-selectable" style="text-align:center;width:320px;padding-top:10px;padding-bottom:10px;display:block;"><button class="not-selectable" id="myrestartbutton" onclick="restartGame()" disabled>Restart</button><button class="not-selectable" id="earnmydbutton" onclick="earnMYD()" disabled>Earn MYD</button></div>
+            <div class="not-selectable" style="text-align:center;width:320px;">
+              <button class="not-selectable" ontouchstart="moveup()" ontouchend="clearmove()" onmousedown="moveup()" onmouseup="clearmove()">UP</button><br><br>
+              <button class="not-selectable" ontouchstart="moveleft()" ontouchend="clearmove()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
+              <button class="not-selectable" ontouchstart="moveright()" ontouchend="clearmove()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button><br><br>
+              <button class="not-selectable" ontouchstart="movedown()" ontouchend="clearmove()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
+            </div>
+            Coming soon.
         </div>
       </div>
     </section>
-  </div>
+  </div> -->
 </div>
 
 <script type='application/javascript'>
