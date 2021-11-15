@@ -55,7 +55,6 @@
   <div class="myd_main not-selectable" id="myd_main">
     <section class="myd_solid not-selectable">
       <div class="myd_section-group not-selectable" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <!--
         <h3 class="myd_section-title myd_fade not-selectable" itemprop="name"><%~ it.page.getmyd.title_3 %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
         <p><%~ it.page.getmyd.referal_code %></p><div class="input-resp">

@@ -22,14 +22,14 @@
   </div>
 
   <div class="myd_main" id="myd_main">
-    <!-- <section class="myd_solid">
+    <section class="myd_solid">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <h3 class="myd_section-title text-center" itemprop="name"><%~ it.page.learncrypto.subtitle %></h3>
         <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
           <iframe width="100%" height="340px" src="https://www.youtube.com/embed/1pScOkxaCS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <section class="myd_transparent">
       <div class="myd_section-group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

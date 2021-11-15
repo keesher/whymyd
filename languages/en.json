@@ -118,6 +118,8 @@
       "title": "MYD Wallet",
       "subtitle": "Get MYD Wallet Application",
       "description": "MYD Wallet is available for iOS on the Apple App Store and for Android on the Google Play Store. There is also an APK download below for Android devices which need it.",
+      "centralsubtitle": "Get MYD Central Application",
+      "centraldescription": "MYD Central is available for Android on the Google Play Store. There is also an APK download below for Android devices which need it.",
       "description_2": "You will need to unzip the provided files using applications such as <a href=\"https://www.winzip.com/en/download/winzip/\">WinZip</a>, <a href=\"https://www.7-zip.org/\">7-zip</a> and <a href=\"https://www.win-rar.com/start.html?&L=0\">WinRAR</a>. You can download these from their official websites."
     },
     "trade": {
