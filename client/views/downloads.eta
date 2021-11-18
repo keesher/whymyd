@@ -50,9 +50,9 @@
           <h3 class="myd_section-title" itemprop="name"><%= it.page.download.centralsubtitle %></h3>
           <div class="mb-3 d-block d-lg-none"><img width="80%" height="auto" src="static/img/application.png" alt="" /></div>
           <p><%= it.page.download.centraldescription %></p>
-          <!-- <div class="btn-container">
+          <div class="btn-container">
             <a class="btn-android" href="https://play.google.com/store/apps/details?id=money.myd.mydcentral" target="_blank"><img src="static/img/playstore-badge.png" alt="" /></a>
-          </div> -->
+          </div>
           <div class="mt-3">
             <p class="d-block d-lg-none">Or</p>
             <p class="mt-3">
